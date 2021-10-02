@@ -1,38 +1,231 @@
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once('./PdfCreator.php');
+require_once('./PdfPage.php');
+$table = [
+	0 => [
+		'title' => [
+			'name' => 'Доход',
+			'plan' => '4 800 000 / 4000 шт / 80.00%	', 
+			'fact' => '979 000 / 1719 шт / 16.32%',
+			'isTitle' => 'true',
+		],
+		'data' => [
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-', 
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+		]
+	],
+];
 
-use Dompdf\Dompdf;
-use Dompdf\FontMetrics;
+
+$rowsPages = [];
+
+$page = new PdfPage(0);
+
+$lastTable = count($table);
+
+foreach($table as $key => $part) {
+
+	$totalInBlock = count($part['data']);
+
+	// Если таблица не влазит на эту страницу, то перенос
+	if($totalInBlock + 1 > $page->getSize()){
+		if(!$page->getEmpty()){
+			$rowsPages[] = $page->getElements();
+		}
+		$page = new PdfPage(0);
+		$page->addElement($part['title']);
+	} else {
+		$page->addElement($part['title']);
+	}
+
+	foreach($part['data'] as $row){
+
+		if($page->getSize() == 0 and $totalInBlock > 0){
+			$rowsPages[] = $page->getElements();
+			$page = new PdfPage(0);
+			$page->addElement($part['title']);
+		}
+
+		$page->addElement($row);
+		$totalInBlock--;
+
+		if($totalInBlock == 0 and $lastTable == ($key + 1)){
+			$rowsPages[] = $page->getElements();
+			break;
+		}
+	}
+	
+}
 
 
-// instantiate and use the dompdf class
-$dompdf = new Dompdf(array('enable_remote' => true));
-// DOCS ссылка на файл верстки
+// header('Content-Type: application/json; charset=utf-8');
+// echo json_encode($rowsPages);
+// exit(0);
 
 
-$dompdf->loadHtmlFile('http://test.test/template.html');
+$data = [
+	'headerName' =>'Евгений Маргулис',
+	'headerDate' => date("m.d.Y"),
+	'headerCity' => 'Красноярск',
+	'headerDay' => 'СБ, 18:00',
+	'headerPlace' => 'Красноярский музыкальный театр',
+	'headerPhone' => '+7 (495) 201-25-05',
+	'headerEmail' => 'info@neborecords.ru',
+	'headerLink' => 'neborecords.ru',
+	'rowsPages1' => $rowsPages,
+];
 
-// (Optional) Setup the paper size and orientation
-$dompdf->setPaper('A4');
-
-// Render the HTML as PDF
-$dompdf->render();
-
-$font = $dompdf->getFontMetrics()->get_font("houschkapro");
-// Print page numbering string at pos (500,118) on page, using $font in size 10
-$dompdf->getCanvas()->page_text(36, 820, "Страница {PAGE_NUM} / {PAGE_COUNT}", $font, 8, array(0.333, 0.333, 0.333));
-
-$dateNow = date("m.d.Y H:i");
-
-$dompdf->getCanvas()->page_text(504, 820, $dateNow, $font, 8, array(0.333, 0.333, 0.333));
-
-// Output the generated PDF to Browser
-
-$file = $dompdf->stream("dompdf_out.pdf", array("Attachment" => false));
+// Массив всегда имеет заголовок
+// Массив переносится, если он больше, чем 30 (вместе с заголовоком)
+// Если на странице уже заполнено что-то, то мы считаем оставшееся место
+// если следующий массив меньше или равен оставшемуся месту, то заносим его
 
 
 
-exit(0);
 
+$pdf = new PdfCreator($data);
 
+return $pdf->create();
