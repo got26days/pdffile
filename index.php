@@ -12,12 +12,12 @@ $table2 = include 'test2.php';
 $page1 = new pageCreator($table, 1);
 $page1 = $page1->create();
 
-// $page2 = new pageCreator($table2, 2);
-// $page2 = $page2->create();
+$page2 = new pageCreator($table2, 2);
+$page2 = $page2->create();
 
-header('Content-Type: application/json; charset=utf-8');
-echo json_encode($page1);
-exit(0);
+// header('Content-Type: application/json; charset=utf-8');
+// echo json_encode($page2);
+// exit(0);
 
 $data = [
 	'headerName' =>'Евгений Маргулис',
@@ -29,7 +29,7 @@ $data = [
 	'headerEmail' => 'info@neborecords.ru',
 	'headerLink' => 'neborecords.ru',
 	'rowsPages1' => $page1,
-	// 'rowsPages2' => $page2,
+	'rowsPages2' => $page2,
 ];
 
 // Массив всегда имеет заголовок

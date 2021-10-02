@@ -564,13 +564,22 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
             // line 424
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["page"]);
-            foreach ($context['_seq'] as $context["_key"] => $context["table"]) {
+            foreach ($context['_seq'] as $context["keyName"] => $context["table"]) {
                 // line 425
                 echo "
-                    <div class=\"dataTable__title\">
+                    <div class=\"dataTable__title\"
                         ";
                 // line 427
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["table"], "title", [], "any", false, false, false, 427), "html", null, true);
+                if (($context["key"] != 0)) {
+                    // line 428
+                    echo "                        style=\"padding-top: 30px;\"
+                        ";
+                }
+                // line 430
+                echo "                    >
+                        ";
+                // line 431
+                echo twig_escape_filter($this->env, $context["keyName"], "html", null, true);
                 echo "
                     </div>
 
@@ -578,9 +587,9 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                     cellpadding=\"9\" border=\"0\" cellspacing=\"0\">
                         <thead>
                             ";
-                // line 433
-                if ((twig_get_attribute($this->env, $this->source, $context["table"], "title", [], "any", false, false, false, 433) == "Продажи")) {
-                    // line 434
+                // line 437
+                if (($context["keyName"] == "Продажи")) {
+                    // line 438
                     echo "                            <tr>
                                 <td style=\"padding-left: 30px;\">
                                     Оператор
@@ -603,10 +612,10 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                             </tr>
                             ";
                 }
-                // line 455
+                // line 459
                 echo "                            ";
-                if ((twig_get_attribute($this->env, $this->source, $context["table"], "title", [], "any", false, false, false, 455) == "Продажи")) {
-                    // line 456
+                if (($context["keyName"] == "АВ билетных операторов")) {
+                    // line 460
                     echo "                            <tr>
                                 <td style=\"padding-left: 30px;\">
                                     Оператор
@@ -620,203 +629,257 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                             </tr>
                             ";
                 }
-                // line 468
+                // line 472
+                echo "                            ";
+                if (($context["keyName"] == "Налоги и сбор")) {
+                    // line 473
+                    echo "                            <tr>
+                                <td style=\"padding-left: 30px;\">
+                                    Категория
+                                </td>
+                                <td>
+                                    План
+                                </td>
+                                <td>
+                                    Факт
+                                </td>
+                                <td>
+                                    Оплачено
+                                </td>
+                                <td>
+                                    Остаток
+                                </td>
+                            </tr>
+                            ";
+                }
+                // line 491
                 echo "                        </thead>
                         <tbody>
                             ";
-                // line 470
+                // line 493
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["table"], "elements", [], "any", false, false, false, 470));
+                $context['_seq'] = twig_ensure_traversable($context["table"]);
                 foreach ($context['_seq'] as $context["_key"] => $context["row"]) {
-                    // line 471
+                    // line 494
                     echo "                                ";
-                    if ((twig_get_attribute($this->env, $this->source, $context["row"], "name", [], "any", false, false, false, 471) == "Продажи")) {
-                        // line 472
+                    if (($context["keyName"] == "Продажи")) {
+                        // line 495
                         echo "                                    <tr ";
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 472) == "true")) {
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 495) == "true")) {
                             echo " class=\"tr-group\" ";
                         } else {
                             echo " class=\"tr-simple\" ";
                         }
                         echo ">
                                         <td class=\"tr-group__first ";
-                        // line 473
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 473) == "true")) {
+                        // line 496
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 496) == "true")) {
                             echo " tr-group__second ";
                         }
                         echo "\" style=\"padding-left: 30px;\" >
                                             ";
-                        // line 474
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "operator", [], "any", false, false, false, 474), "html", null, true);
+                        // line 497
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "operator", [], "any", false, false, false, 497), "html", null, true);
                         echo "
                                         </td>
                                         <td ";
-                        // line 476
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 476) == "true")) {
+                        // line 499
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 499) == "true")) {
                             echo " class=\"tr-group__second\" ";
                         }
                         echo ">
                                             ";
-                        // line 477
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 477), "html", null, true);
+                        // line 500
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 500), "html", null, true);
                         echo "
                                         </td>
                                         <td ";
-                        // line 479
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 479) == "true")) {
+                        // line 502
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 502) == "true")) {
                             echo " class=\"tr-group__second\" ";
                         }
                         echo ">
                                             ";
-                        // line 480
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 480), "html", null, true);
+                        // line 503
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 503), "html", null, true);
                         echo "
                                         </td>
                                         <td ";
-                        // line 482
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 482) == "true")) {
+                        // line 505
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 505) == "true")) {
                             echo " class=\"tr-group__second\" ";
                         }
                         echo ">
                                             ";
-                        // line 483
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "sum", [], "any", false, false, false, 483), "html", null, true);
+                        // line 506
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "sum", [], "any", false, false, false, 506), "html", null, true);
                         echo "
                                         </td>
                                         <td ";
-                        // line 485
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 485) == "true")) {
+                        // line 508
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 508) == "true")) {
                             echo " class=\"tr-group__second\" ";
                         }
                         echo ">
                                             ";
-                        // line 486
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "paid", [], "any", false, false, false, 486), "html", null, true);
+                        // line 509
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "paid", [], "any", false, false, false, 509), "html", null, true);
                         echo "
                                         </td>
                                         <td ";
-                        // line 488
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 488) == "true")) {
+                        // line 511
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 511) == "true")) {
                             echo " class=\"tr-group__second\" ";
                         }
                         echo ">
                                             ";
-                        // line 489
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "balance", [], "any", false, false, false, 489), "html", null, true);
+                        // line 512
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "balance", [], "any", false, false, false, 512), "html", null, true);
                         echo "
                                         </td>
                                     </tr>
                                 ";
                     }
-                    // line 493
+                    // line 516
+                    echo "                                ";
+                    if (($context["keyName"] == "АВ билетных операторов")) {
+                        // line 517
+                        echo "                                <tr ";
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 517) == "true")) {
+                            echo " class=\"tr-group\" ";
+                        } else {
+                            echo " class=\"tr-simple\" ";
+                        }
+                        echo ">
+                                    <td class=\"tr-group__first ";
+                        // line 518
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 518) == "true")) {
+                            echo " tr-group__second ";
+                        }
+                        echo "\" style=\"padding-left: 30px;\" >
+                                        ";
+                        // line 519
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "operator", [], "any", false, false, false, 519), "html", null, true);
+                        echo "
+                                    </td>
+                                    <td ";
+                        // line 521
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 521) == "true")) {
+                            echo " class=\"tr-group__second\" ";
+                        }
+                        echo ">
+                                        ";
+                        // line 522
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 522), "html", null, true);
+                        echo "
+                                    </td>
+                                    <td ";
+                        // line 524
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 524) == "true")) {
+                            echo " class=\"tr-group__second\" ";
+                        }
+                        echo ">
+                                        ";
+                        // line 525
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 525), "html", null, true);
+                        echo "
+                                    </td>
+                                </tr>
+                                ";
+                    }
+                    // line 529
+                    echo "                                ";
+                    if (($context["keyName"] == "Налоги и сбор")) {
+                        // line 530
+                        echo "                                    <tr ";
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 530) == "true")) {
+                            echo " class=\"tr-group\" ";
+                        } else {
+                            echo " class=\"tr-simple\" ";
+                        }
+                        echo ">
+                                        <td class=\"tr-group__first ";
+                        // line 531
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 531) == "true")) {
+                            echo " tr-group__second ";
+                        }
+                        echo "\" style=\"padding-left: 30px;\" >
+                                            ";
+                        // line 532
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "category", [], "any", false, false, false, 532), "html", null, true);
+                        echo "
+                                        </td>
+                                        <td ";
+                        // line 534
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 534) == "true")) {
+                            echo " class=\"tr-group__second\" ";
+                        }
+                        echo ">
+                                            ";
+                        // line 535
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 535), "html", null, true);
+                        echo "
+                                        </td>
+                                        <td ";
+                        // line 537
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 537) == "true")) {
+                            echo " class=\"tr-group__second\" ";
+                        }
+                        echo ">
+                                            ";
+                        // line 538
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 538), "html", null, true);
+                        echo "
+                                        </td>
+                                        <td ";
+                        // line 540
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 540) == "true")) {
+                            echo " class=\"tr-group__second\" ";
+                        }
+                        echo ">
+                                            ";
+                        // line 541
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "paid", [], "any", false, false, false, 541), "html", null, true);
+                        echo "
+                                        </td>
+                                        <td ";
+                        // line 543
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 543) == "true")) {
+                            echo " class=\"tr-group__second\" ";
+                        }
+                        echo ">
+                                            ";
+                        // line 544
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "balance", [], "any", false, false, false, 544), "html", null, true);
+                        echo "
+                                        </td>
+                                    </tr>
+                                ";
+                    }
+                    // line 548
                     echo "                            ";
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['row'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 494
+                // line 549
                 echo "                        </tbody>
                     </table>
 
                 ";
             }
             $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['table'], $context['_parent'], $context['loop']);
+            unset($context['_seq'], $context['_iterated'], $context['keyName'], $context['table'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 498
-            echo "
-
-
-                <div class=\"dataTable__title\">
-                    АВ билетных операторов
-                </div>
-
-                <table class=\"dataTable\" 
-                cellpadding=\"9\" border=\"0\" cellspacing=\"0\">
-                    <thead>
-                        <tr>
-                            <td style=\"padding-left: 30px;\">
-                                Оператор
-                            </td>
-                            <td>
-                                План
-                            </td>
-                            <td>
-                                Факт
-                            </td>
-                        </tr>
-
-                    </thead>
-                    <tbody>
-                        ";
-            // line 522
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable($context["page"]);
-            foreach ($context['_seq'] as $context["_key"] => $context["row"]) {
-                // line 523
-                echo "                            ";
-                if (((twig_get_attribute($this->env, $this->source, $context["row"], "name", [], "any", false, false, false, 523) == "АВ билетных операторов") && (twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 523) == "false"))) {
-                    // line 524
-                    echo "                            <tr ";
-                    if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 524) == "true")) {
-                        echo " class=\"tr-group\" ";
-                    } else {
-                        echo " class=\"tr-simple\" ";
-                    }
-                    echo ">
-                                <td class=\"tr-group__first ";
-                    // line 525
-                    if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 525) == "true")) {
-                        echo " tr-group__second ";
-                    }
-                    echo "\" style=\"padding-left: 30px;\" >
-                                    ";
-                    // line 526
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "operator", [], "any", false, false, false, 526), "html", null, true);
-                    echo "
-                                </td>
-                                <td ";
-                    // line 528
-                    if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 528) == "true")) {
-                        echo " class=\"tr-group__second\" ";
-                    }
-                    echo ">
-                                    ";
-                    // line 529
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 529), "html", null, true);
-                    echo "
-                                </td>
-                                <td ";
-                    // line 531
-                    if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 531) == "true")) {
-                        echo " class=\"tr-group__second\" ";
-                    }
-                    echo ">
-                                    ";
-                    // line 532
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 532), "html", null, true);
-                    echo "
-                                </td>
-                            </tr>
-                            ";
-                }
-                // line 536
-                echo "                        ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['row'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 537
-            echo "                    </tbody>
-                </table>
-            </div>
+            // line 553
+            echo "            </div>
         </div>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['key'], $context['page'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 542
+        // line 556
         echo "
     </main>
 
@@ -837,7 +900,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
 
     public function getDebugInfo()
     {
-        return array (  820 => 542,  810 => 537,  804 => 536,  797 => 532,  791 => 531,  786 => 529,  780 => 528,  775 => 526,  769 => 525,  760 => 524,  757 => 523,  753 => 522,  727 => 498,  718 => 494,  712 => 493,  705 => 489,  699 => 488,  694 => 486,  688 => 485,  683 => 483,  677 => 482,  672 => 480,  666 => 479,  661 => 477,  655 => 476,  650 => 474,  644 => 473,  635 => 472,  632 => 471,  628 => 470,  624 => 468,  610 => 456,  607 => 455,  584 => 434,  582 => 433,  573 => 427,  569 => 425,  565 => 424,  562 => 423,  556 => 419,  554 => 418,  549 => 415,  545 => 414,  542 => 413,  532 => 408,  522 => 404,  516 => 403,  511 => 401,  505 => 400,  500 => 398,  490 => 396,  486 => 395,  469 => 380,  465 => 378,  463 => 377,  460 => 376,  454 => 372,  452 => 371,  448 => 369,  444 => 368,  442 => 367,  439 => 366,  435 => 365,  402 => 337,  390 => 328,  386 => 327,  373 => 317,  369 => 316,  353 => 303,  344 => 297,  333 => 289,  324 => 283,  311 => 273,  37 => 1,);
+        return array (  883 => 556,  875 => 553,  866 => 549,  860 => 548,  853 => 544,  847 => 543,  842 => 541,  836 => 540,  831 => 538,  825 => 537,  820 => 535,  814 => 534,  809 => 532,  803 => 531,  794 => 530,  791 => 529,  784 => 525,  778 => 524,  773 => 522,  767 => 521,  762 => 519,  756 => 518,  747 => 517,  744 => 516,  737 => 512,  731 => 511,  726 => 509,  720 => 508,  715 => 506,  709 => 505,  704 => 503,  698 => 502,  693 => 500,  687 => 499,  682 => 497,  676 => 496,  667 => 495,  664 => 494,  660 => 493,  656 => 491,  636 => 473,  633 => 472,  619 => 460,  616 => 459,  593 => 438,  591 => 437,  582 => 431,  579 => 430,  575 => 428,  573 => 427,  569 => 425,  565 => 424,  562 => 423,  556 => 419,  554 => 418,  549 => 415,  545 => 414,  542 => 413,  532 => 408,  522 => 404,  516 => 403,  511 => 401,  505 => 400,  500 => 398,  490 => 396,  486 => 395,  469 => 380,  465 => 378,  463 => 377,  460 => 376,  454 => 372,  452 => 371,  448 => 369,  444 => 368,  442 => 367,  439 => 366,  435 => 365,  402 => 337,  390 => 328,  386 => 327,  373 => 317,  369 => 316,  353 => 303,  344 => 297,  333 => 289,  324 => 283,  311 => 273,  37 => 1,);
     }
 
     public function getSourceContext()

@@ -5,41 +5,37 @@ class PdfPage{
 	protected $elements;
 	protected $isEmpty;
 
-	public function __construct()
+	public function __construct($pageSize)
 	{
-		$this->size = 7;
+		// 22 тип 1
+		// 20 тип 2
+		$this->size = $pageSize;
 		$this->elements = [];
-		$this->isEmpty = true;
 	}
 	
 	public function getElements(){
 		return $this->elements;
 	}
 
-	public function getEmpty(){
-		return $this->isEmpty;
-	}
-
 	public function getSize(){
 		return $this->size;
 	}
 
-	public function getElementsTypeTwo(){
-		return array_slice($this->elements, 1, count($this->elements));
-	}
-
 	public function addElement($element){
-
 		array_push($this->elements, $element);
 		$this->size--;
-		$this->isEmpty = false;
 		return $this->elements;
-
 	}
 
-	public function subSize(){
+	public function addElementToKey($element, $key){
+		$this->elements[$key][] = $element;
 		$this->size--;
-		return $this->size;
+		return $this->elements;
+	}
+
+	public function addKey($key){
+		$this->elements[$key] = [];
+		$this->size--;
 	}
 
 }
@@ -47,14 +43,16 @@ class PdfPage{
 class PdfZone {
 
 	protected $pages;
+	protected $pageSize;
 
-	public function __construct()
+	public function __construct($pageSize)
 	{
 		$this->pages = [];
+		$this->pageSize = $pageSize;
 	}
 
 	public function createPage(){
-		$this->pages[] = new PdfPage();
+		$this->pages[] = new PdfPage($this->pageSize);
 		return end($this->pages);
 	}
 
