@@ -203,10 +203,11 @@
 
         .tr-group__first{
             padding-left: 30px;
+            position: relative;
         }
 
-        .tr-simple td {
-            border-bottom: 1px solid #E8ECF7;
+        .tr-simple {
+            border-bottom: 2px solid #E8ECF7 !important;
         }
 
         
@@ -266,15 +267,18 @@
         }
 
         .tr-group__sub .tr-group__first{
-            padding-left: 50px !important;
+            padding-left: 43px !important;
         }
 
-        .tr-group__sub .tr-group__first:before{
-            content:url('http://test.test/images/arrow.svg'); /* with class ModalCarrot ??*/
-            position:relative; /*or absolute*/
-            z-index:100000; /*a number that's more than the modal box*/
-            left:-30px;
-            top:10px;
+        .sub-before{
+            display: none;
+        }
+
+        .tr-group__sub .sub-before{
+            display: block;
+            position:absolute;
+            left: 35px;
+            top: -4px;
         }
 
         .redPrice{
@@ -282,6 +286,9 @@
         }
         .greenPrice{
             color: #0E9702 !important;
+        }
+        table { 
+        border-collapse: collapse; 
         }
     </style>
 </head>
@@ -639,7 +646,11 @@
                                     "
                                 >
                                     <td class="tr-group__first">
-                                        {{ row.name }}
+                                       <div class="sub-before">
+                                           <img src="http://test.test/images/arrow.svg" alt="arrow">
+                                       </div> 
+                                       
+                                       {{ row.name }}
                                     </td>
                                     <td>
                                         {{ row.plan }}

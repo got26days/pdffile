@@ -45,7 +45,7 @@
 				'isTitle' => 'false',
 			],
 			[
-				'name' => 'Test"',
+				'name' => 'Test',
 				'plan' => '2-1', 
 				'fact' => '114 550',
 				'isTitle' => 'false',
