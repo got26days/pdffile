@@ -4,7 +4,6 @@ require_once('./PdfCreator.php');
 require_once('./pageCreator.php');
 
 $table = include 'test.php';
-
 $table2 = include 'test2.php';
 
 $page1 = new pageCreator($table, 1);
