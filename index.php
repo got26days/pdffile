@@ -35,3 +35,5 @@ $data = [
 $pdf = new PdfCreator($data);
 
 return $pdf->create();
+
+
