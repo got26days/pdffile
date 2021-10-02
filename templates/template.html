@@ -248,7 +248,7 @@
         .dataTable__title{
             text-align: center;
             font-size: 17px;
-            padding-top: 0px;
+            padding-top: 8px;
             padding-bottom: 10px;
         }
     </style>
@@ -421,14 +421,86 @@
                 </div>
                 {% endif %}
 
-                {% for key1, row in page|slice(0, 1) %}
-                <div class="dataTable__title"
-                {% if key != 0 %}
-                style="padding-top: 20px;"
-                {% endif %}>
-                    {{ row.name }}
-                </div>
+                {% for table in page %}
+
+                    <div class="dataTable__title">
+                        {{ table.title }}
+                    </div>
+
+                    <table class="dataTable" 
+                    cellpadding="9" border="0" cellspacing="0">
+                        <thead>
+                            {% if table.title == 'Продажи' %}
+                            <tr>
+                                <td style="padding-left: 30px;">
+                                    Оператор
+                                </td>
+                                <td>
+                                    План
+                                </td>
+                                <td>
+                                    Факт
+                                </td>
+                                <td>
+                                    Сумма без АВ
+                                </td>
+                                <td>
+                                    Оплачено
+                                </td>
+                                <td>
+                                    Остаток
+                                </td>
+                            </tr>
+                            {% endif %}
+                            {% if table.title == 'Продажи' %}
+                            <tr>
+                                <td style="padding-left: 30px;">
+                                    Оператор
+                                </td>
+                                <td>
+                                    План
+                                </td>
+                                <td>
+                                    Факт
+                                </td>
+                            </tr>
+                            {% endif %}
+                        </thead>
+                        <tbody>
+                            {% for row in table.elements %}
+                                {% if row.name == 'Продажи'%}
+                                    <tr {% if row.isTotal=='true' %} class="tr-group" {% else %} class="tr-simple" {% endif %}>
+                                        <td class="tr-group__first {% if row.isTotal=='true' %} tr-group__second {% endif %}" style="padding-left: 30px;" >
+                                            {{ row.operator }}
+                                        </td>
+                                        <td {% if row.isTotal=='true' %} class="tr-group__second" {% endif %}>
+                                            {{ row.plan }}
+                                        </td>
+                                        <td {% if row.isTotal=='true' %} class="tr-group__second" {% endif %}>
+                                            {{ row.fact }}
+                                        </td>
+                                        <td {% if row.isTotal=='true' %} class="tr-group__second" {% endif %}>
+                                            {{ row.sum }}
+                                        </td>
+                                        <td {% if row.isTotal=='true' %} class="tr-group__second" {% endif %}>
+                                            {{ row.paid }}
+                                        </td>
+                                        <td {% if row.isTotal=='true' %} class="tr-group__second" {% endif %}>
+                                            {{ row.balance }}
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
                 {% endfor %}
+
+
+
+                <div class="dataTable__title">
+                    АВ билетных операторов
+                </div>
 
                 <table class="dataTable" 
                 cellpadding="9" border="0" cellspacing="0">
@@ -443,20 +515,12 @@
                             <td>
                                 Факт
                             </td>
-                            <td>
-                                Сумма без АВ
-                            </td>
-                            <td>
-                                Оплачено
-                            </td>
-                            <td>
-                                Остаток
-                            </td>
                         </tr>
+
                     </thead>
                     <tbody>
-                        {% for key1, row in page %}
-                            {% if key1 > 0 %}
+                        {% for row in page %}
+                            {% if row.name == 'АВ билетных операторов' and row.isTitle == 'false' %}
                             <tr {% if row.isTotal=='true' %} class="tr-group" {% else %} class="tr-simple" {% endif %}>
                                 <td class="tr-group__first {% if row.isTotal=='true' %} tr-group__second {% endif %}" style="padding-left: 30px;" >
                                     {{ row.operator }}
@@ -466,15 +530,6 @@
                                 </td>
                                 <td {% if row.isTotal=='true' %} class="tr-group__second" {% endif %}>
                                     {{ row.fact }}
-                                </td>
-                                <td {% if row.isTotal=='true' %} class="tr-group__second" {% endif %}>
-                                    {{ row.sum }}
-                                </td>
-                                <td {% if row.isTotal=='true' %} class="tr-group__second" {% endif %}>
-                                    {{ row.paid }}
-                                </td>
-                                <td {% if row.isTotal=='true' %} class="tr-group__second" {% endif %}>
-                                    {{ row.balance }}
                                 </td>
                             </tr>
                             {% endif %}

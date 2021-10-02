@@ -1,24 +1,16 @@
 <?php
-
 class PdfPage{
 
-	protected $page;
 	protected $size;
 	protected $elements;
 	protected $isEmpty;
 
-	public function __construct($page)
+	public function __construct()
 	{
-		$this->page = $page;
-		$this->size = 22;
+		$this->size = 7;
 		$this->elements = [];
 		$this->isEmpty = true;
 	}
-
-	public function createPage(){
-		return $this->page;
-	}
-
 	
 	public function getElements(){
 		return $this->elements;
@@ -30,6 +22,10 @@ class PdfPage{
 
 	public function getSize(){
 		return $this->size;
+	}
+
+	public function getElementsTypeTwo(){
+		return array_slice($this->elements, 1, count($this->elements));
 	}
 
 	public function addElement($element){
@@ -46,4 +42,30 @@ class PdfPage{
 		return $this->size;
 	}
 
+}
+
+class PdfZone {
+
+	protected $pages;
+
+	public function __construct()
+	{
+		$this->pages = [];
+	}
+
+	public function createPage(){
+		$this->pages[] = new PdfPage();
+		return end($this->pages);
+	}
+
+	public function getPages(){
+
+		$newArray = [];
+
+		foreach($this->pages as $page){
+			$newArray[] = $page->getElements();
+		}
+
+		return $newArray;
+	}
 }
