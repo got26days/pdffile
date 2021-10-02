@@ -17,6 +17,7 @@ $page2 = $page2->createHard();
 // exit(0);
 
 $data = [
+	'domain' => null,
 	'headerName' =>'Евгений Маргулис',
 	'headerDate' => date("m.d.Y"),
 	'headerCity' => 'Красноярск',
