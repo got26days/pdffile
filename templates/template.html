@@ -206,8 +206,8 @@
             position: relative;
         }
 
-        .tr-simple {
-            border-bottom: 2px solid #E8ECF7 !important;
+        .tr-simple td{
+            border-bottom: 1px solid  #E8ECF7;
         }
 
         
@@ -288,7 +288,7 @@
             color: #0E9702 !important;
         }
         table { 
-        border-collapse: collapse; 
+            border-spacing: 0 !important;
         }
     </style>
 </head>
@@ -416,7 +416,7 @@
                 {% if key != 0 %}
                 style="padding-top: 50px;"
                 {% endif %}
-                cellpadding="9" border="0" cellspacing="0">
+                cellpadding="9">
                     <thead>
                         <tr>
                             <td style="padding-left: 30px;">
@@ -433,12 +433,9 @@
                     <tbody>
                         {% for row in page %}
                         <tr 
-                            class="
-                            tr-simple
-                                {% if row.isTotal == 'true' %} tr-group {% endif %}
+                            class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
                                 {% if row.isTitle == 'true' %} tr-group__titleOne {% endif %}
-                                {% if row.isSub == 'true' %} tr-group__sub {% endif %}
-                            "
+                                {% if row.isSub == 'true' %} tr-group__sub {% endif %}"
                         >
                             <td class="tr-group__first">
                                 {{ row.name }}
@@ -560,9 +557,7 @@
                             {% for row in table %}
                                 {% if keyName == 'Продажи'%}
                                 <tr 
-                                    class="
-                                        tr-simple
-                                        {% if row.isTotal == 'true' %} tr-group {% endif %}
+                                    class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
                                         {% if row.isTitle == 'true' %} tr-group__title {% endif %}
                                         {% if row.isSub == 'true' %} tr-group__sub {% endif %}
                                     "
@@ -590,9 +585,7 @@
 
                             {% if keyName == 'АВ билетных операторов' %}
                                 <tr
-                                    class="
-                                        tr-simple
-                                        {% if row.isTotal == 'true' %} tr-group {% endif %}
+                                    class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
                                         {% if row.isTitle == 'true' %} tr-group__title {% endif %}
                                         {% if row.isSub == 'true' %} tr-group__sub {% endif %}
                                     "
@@ -611,9 +604,7 @@
 
                             {% if keyName == 'Налоги и сборы' %}
                                 <tr
-                                    class="
-                                        tr-simple
-                                        {% if row.isTotal == 'true' %} tr-group {% endif %}
+                                    class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
                                         {% if row.isTitle == 'true' %} tr-group__title {% endif %}
                                         {% if row.isSub == 'true' %} tr-group__sub {% endif %}
                                     "
@@ -638,9 +629,7 @@
 
                             {% if keyName == 'Организация мероприятия' %}
                                 <tr
-                                    class="
-                                        tr-simple
-                                        {% if row.isTotal == 'true' %} tr-group {% endif %}
+                                    class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
                                         {% if row.isTitle == 'true' %} tr-group__title {% endif %}
                                         {% if row.isSub == 'true' %} tr-group__sub {% endif %}
                                     "

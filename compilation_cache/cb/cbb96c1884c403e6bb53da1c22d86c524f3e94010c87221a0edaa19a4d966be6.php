@@ -242,8 +242,8 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
             position: relative;
         }
 
-        .tr-simple {
-            border-bottom: 2px solid #E8ECF7 !important;
+        .tr-simple td{
+            border-bottom: 1px solid  #E8ECF7;
         }
 
         
@@ -324,7 +324,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
             color: #0E9702 !important;
         }
         table { 
-        border-collapse: collapse; 
+            border-spacing: 0 !important;
         }
     </style>
 </head>
@@ -505,7 +505,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                 ";
             }
             // line 419
-            echo "                cellpadding=\"9\" border=\"0\" cellspacing=\"0\">
+            echo "                cellpadding=\"9\">
                     <thead>
                         <tr>
                             <td style=\"padding-left: 30px;\">
@@ -527,42 +527,39 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
             foreach ($context['_seq'] as $context["_key"] => $context["row"]) {
                 // line 435
                 echo "                        <tr 
-                            class=\"
-                            tr-simple
-                                ";
-                // line 438
-                if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 438) == "true")) {
+                            class=\"tr-simple ";
+                // line 436
+                if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 436) == "true")) {
                     echo " tr-group ";
                 }
-                // line 439
+                // line 437
                 echo "                                ";
-                if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 439) == "true")) {
+                if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 437) == "true")) {
                     echo " tr-group__titleOne ";
                 }
-                // line 440
+                // line 438
                 echo "                                ";
-                if ((twig_get_attribute($this->env, $this->source, $context["row"], "isSub", [], "any", false, false, false, 440) == "true")) {
+                if ((twig_get_attribute($this->env, $this->source, $context["row"], "isSub", [], "any", false, false, false, 438) == "true")) {
                     echo " tr-group__sub ";
                 }
-                // line 441
-                echo "                            \"
+                echo "\"
                         >
                             <td class=\"tr-group__first\">
                                 ";
+                // line 441
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "name", [], "any", false, false, false, 441), "html", null, true);
+                echo "
+                            </td>
+                            <td>
+                                ";
                 // line 444
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "name", [], "any", false, false, false, 444), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 444), "html", null, true);
                 echo "
                             </td>
                             <td>
                                 ";
                 // line 447
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 447), "html", null, true);
-                echo "
-                            </td>
-                            <td>
-                                ";
-                // line 450
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 450), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 447), "html", null, true);
                 echo "
                             </td>
                         </tr>
@@ -571,7 +568,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['row'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 454
+            // line 451
             echo "                    </tbody>
                 </table>
             </div>
@@ -581,14 +578,14 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['key'], $context['page'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 459
+        // line 456
         echo "
         ";
-        // line 460
+        // line 457
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["rowsPages2"] ?? null));
         foreach ($context['_seq'] as $context["key"] => $context["page"]) {
-            // line 461
+            // line 458
             echo "        <div 
         style=\"page-break-before: always;\">
             <div class=\"main\">
@@ -596,28 +593,28 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
            
                 <div class=\"title-zone\" style=\"padding-top: 20px;\">
                     ";
-            // line 467
+            // line 464
             if (($context["key"] == 0)) {
-                // line 468
+                // line 465
                 echo "                    <span>Финансовый отчет</span>
                     ";
             } else {
-                // line 470
+                // line 467
                 echo "                    <div style=\"height: 12px;\"></div>
                     ";
             }
-            // line 472
+            // line 469
             echo "                </div>
                 ";
-            // line 473
+            // line 470
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["page"]);
             foreach ($context['_seq'] as $context["keyName"] => $context["table"]) {
-                // line 474
+                // line 471
                 echo "                    <div class=\"dataTable__title\"
                     >
                         ";
-                // line 476
+                // line 473
                 echo twig_escape_filter($this->env, $context["keyName"], "html", null, true);
                 echo " 
                     </div>
@@ -626,9 +623,9 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                     cellpadding=\"9\" border=\"0\" cellspacing=\"0\">
                         <thead>
                             ";
-                // line 482
+                // line 479
                 if (($context["keyName"] == "Продажи")) {
-                    // line 483
+                    // line 480
                     echo "                            <tr>
                                 <td style=\"padding-left: 30px; width: 140px;\">
                                     Оператор
@@ -651,12 +648,12 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                             </tr>
                             ";
                 }
-                // line 504
+                // line 501
                 echo "
                             ";
-                // line 505
+                // line 502
                 if (($context["keyName"] == "Организация мероприятия")) {
-                    // line 506
+                    // line 503
                     echo "                            <tr>
                                 <td style=\"padding-left: 30px;\">
                                     Услуга
@@ -676,12 +673,12 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                             </tr>
                             ";
                 }
-                // line 524
+                // line 521
                 echo "
                             ";
-                // line 525
+                // line 522
                 if (($context["keyName"] == "Налоги и сборы")) {
-                    // line 526
+                    // line 523
                     echo "                            <tr>
                                 <td style=\"padding-left: 30px;\">
                                     Категория
@@ -701,12 +698,12 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                             </tr>
                             ";
                 }
-                // line 544
+                // line 541
                 echo "
                             ";
-                // line 545
+                // line 542
                 if (($context["keyName"] == "АВ билетных операторов")) {
-                    // line 546
+                    // line 543
                     echo "                            <tr>
                                 <td style=\"padding-left: 30px;\">
                                     Оператор
@@ -720,214 +717,206 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                             </tr>
                             ";
                 }
-                // line 558
+                // line 555
                 echo "                        </thead>
                         <tbody>
                             ";
-                // line 560
+                // line 557
                 $context['_parent'] = $context;
                 $context['_seq'] = twig_ensure_traversable($context["table"]);
                 foreach ($context['_seq'] as $context["_key"] => $context["row"]) {
-                    // line 561
+                    // line 558
                     echo "                                ";
                     if (($context["keyName"] == "Продажи")) {
-                        // line 562
+                        // line 559
                         echo "                                <tr 
-                                    class=\"
-                                        tr-simple
-                                        ";
-                        // line 565
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 565) == "true")) {
+                                    class=\"tr-simple ";
+                        // line 560
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 560) == "true")) {
                             echo " tr-group ";
                         }
-                        // line 566
+                        // line 561
                         echo "                                        ";
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 566) == "true")) {
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 561) == "true")) {
                             echo " tr-group__title ";
                         }
-                        // line 567
+                        // line 562
                         echo "                                        ";
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isSub", [], "any", false, false, false, 567) == "true")) {
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isSub", [], "any", false, false, false, 562) == "true")) {
                             echo " tr-group__sub ";
                         }
-                        // line 568
+                        // line 563
                         echo "                                    \"
                                 >
                                     <td class=\"tr-group__first\">
                                         ";
-                        // line 571
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "operator", [], "any", false, false, false, 571), "html", null, true);
+                        // line 566
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "operator", [], "any", false, false, false, 566), "html", null, true);
                         echo "
                                     </td>
                                     <td>
                                         ";
-                        // line 574
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 574), "html", null, true);
+                        // line 569
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 569), "html", null, true);
                         echo "
                                     </td>
                                     <td>
                                         ";
-                        // line 577
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 577), "html", null, true);
+                        // line 572
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 572), "html", null, true);
                         echo "
                                     </td>
                                     <td>
                                         ";
-                        // line 580
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "sum", [], "any", false, false, false, 580), "html", null, true);
+                        // line 575
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "sum", [], "any", false, false, false, 575), "html", null, true);
                         echo "
                                     </td>
                                     <td>
                                         ";
-                        // line 583
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "paid", [], "any", false, false, false, 583), "html", null, true);
+                        // line 578
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "paid", [], "any", false, false, false, 578), "html", null, true);
                         echo "
                                     </td>
                                     <td class=\"";
-                        // line 585
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "balanceColor", [], "any", false, false, false, 585), "html", null, true);
+                        // line 580
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "balanceColor", [], "any", false, false, false, 580), "html", null, true);
                         echo "\">
                                         ";
-                        // line 586
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "balance", [], "any", false, false, false, 586), "html", null, true);
+                        // line 581
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "balance", [], "any", false, false, false, 581), "html", null, true);
                         echo "
                                     </td>
                                 </tr>
                             ";
                     }
-                    // line 590
+                    // line 585
                     echo "
                             ";
-                    // line 591
+                    // line 586
                     if (($context["keyName"] == "АВ билетных операторов")) {
-                        // line 592
+                        // line 587
                         echo "                                <tr
-                                    class=\"
-                                        tr-simple
-                                        ";
-                        // line 595
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 595) == "true")) {
+                                    class=\"tr-simple ";
+                        // line 588
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 588) == "true")) {
                             echo " tr-group ";
                         }
-                        // line 596
+                        // line 589
                         echo "                                        ";
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 596) == "true")) {
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 589) == "true")) {
                             echo " tr-group__title ";
                         }
-                        // line 597
+                        // line 590
                         echo "                                        ";
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isSub", [], "any", false, false, false, 597) == "true")) {
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isSub", [], "any", false, false, false, 590) == "true")) {
                             echo " tr-group__sub ";
                         }
-                        // line 598
+                        // line 591
                         echo "                                    \"
                                 >
                                     <td class=\"tr-group__first\">
                                         ";
-                        // line 601
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "name", [], "any", false, false, false, 601), "html", null, true);
+                        // line 594
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "name", [], "any", false, false, false, 594), "html", null, true);
                         echo "
                                     </td>
                                     <td>
                                         ";
-                        // line 604
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 604), "html", null, true);
+                        // line 597
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 597), "html", null, true);
                         echo "
                                     </td>
                                     <td>
                                         ";
-                        // line 607
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 607), "html", null, true);
+                        // line 600
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 600), "html", null, true);
                         echo "
                                     </td>
                                 </tr>
                             ";
                     }
-                    // line 611
+                    // line 604
                     echo "
                             ";
-                    // line 612
+                    // line 605
                     if (($context["keyName"] == "Налоги и сборы")) {
-                        // line 613
+                        // line 606
                         echo "                                <tr
-                                    class=\"
-                                        tr-simple
+                                    class=\"tr-simple ";
+                        // line 607
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 607) == "true")) {
+                            echo " tr-group ";
+                        }
+                        // line 608
+                        echo "                                        ";
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 608) == "true")) {
+                            echo " tr-group__title ";
+                        }
+                        // line 609
+                        echo "                                        ";
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isSub", [], "any", false, false, false, 609) == "true")) {
+                            echo " tr-group__sub ";
+                        }
+                        // line 610
+                        echo "                                    \"
+                                >
+                                    <td class=\"tr-group__first\">
+                                        ";
+                        // line 613
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "category", [], "any", false, false, false, 613), "html", null, true);
+                        echo "
+                                    </td>
+                                    <td>
                                         ";
                         // line 616
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 616) == "true")) {
-                            echo " tr-group ";
-                        }
-                        // line 617
-                        echo "                                        ";
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 617) == "true")) {
-                            echo " tr-group__title ";
-                        }
-                        // line 618
-                        echo "                                        ";
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isSub", [], "any", false, false, false, 618) == "true")) {
-                            echo " tr-group__sub ";
-                        }
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 616), "html", null, true);
+                        echo "
+                                    </td>
+                                    <td>
+                                        ";
                         // line 619
-                        echo "                                    \"
-                                >
-                                    <td class=\"tr-group__first\">
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 619), "html", null, true);
+                        echo "
+                                    </td>
+                                    <td>
                                         ";
                         // line 622
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "category", [], "any", false, false, false, 622), "html", null, true);
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "paid", [], "any", false, false, false, 622), "html", null, true);
                         echo "
                                     </td>
                                     <td>
                                         ";
                         // line 625
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 625), "html", null, true);
-                        echo "
-                                    </td>
-                                    <td>
-                                        ";
-                        // line 628
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 628), "html", null, true);
-                        echo "
-                                    </td>
-                                    <td>
-                                        ";
-                        // line 631
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "paid", [], "any", false, false, false, 631), "html", null, true);
-                        echo "
-                                    </td>
-                                    <td>
-                                        ";
-                        // line 634
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "balance", [], "any", false, false, false, 634), "html", null, true);
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "balance", [], "any", false, false, false, 625), "html", null, true);
                         echo "
                                     </td>
                                 </tr>
                             ";
                     }
-                    // line 638
+                    // line 629
                     echo "
                             ";
-                    // line 639
+                    // line 630
                     if (($context["keyName"] == "Организация мероприятия")) {
-                        // line 640
+                        // line 631
                         echo "                                <tr
-                                    class=\"
-                                        tr-simple
-                                        ";
-                        // line 643
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 643) == "true")) {
+                                    class=\"tr-simple ";
+                        // line 632
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 632) == "true")) {
                             echo " tr-group ";
                         }
-                        // line 644
+                        // line 633
                         echo "                                        ";
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 644) == "true")) {
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 633) == "true")) {
                             echo " tr-group__title ";
                         }
-                        // line 645
+                        // line 634
                         echo "                                        ";
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isSub", [], "any", false, false, false, 645) == "true")) {
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isSub", [], "any", false, false, false, 634) == "true")) {
                             echo " tr-group__sub ";
                         }
-                        // line 646
+                        // line 635
                         echo "                                    \"
                                 >
                                     <td class=\"tr-group__first\">
@@ -936,47 +925,47 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                                        </div> 
                                        
                                        ";
-                        // line 653
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "name", [], "any", false, false, false, 653), "html", null, true);
+                        // line 642
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "name", [], "any", false, false, false, 642), "html", null, true);
                         echo "
                                     </td>
                                     <td>
                                         ";
-                        // line 656
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 656), "html", null, true);
+                        // line 645
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 645), "html", null, true);
                         echo "
                                     </td>
                                     <td>
                                         ";
-                        // line 659
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 659), "html", null, true);
+                        // line 648
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 648), "html", null, true);
                         echo "
                                     </td>
                                     <td>
                                         ";
-                        // line 662
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "paid", [], "any", false, false, false, 662), "html", null, true);
+                        // line 651
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "paid", [], "any", false, false, false, 651), "html", null, true);
                         echo "
                                     </td>
                                     <td class=\"";
-                        // line 664
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "balanceColor", [], "any", false, false, false, 664), "html", null, true);
+                        // line 653
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "balanceColor", [], "any", false, false, false, 653), "html", null, true);
                         echo "\">
                                         ";
-                        // line 665
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "balance", [], "any", false, false, false, 665), "html", null, true);
+                        // line 654
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "balance", [], "any", false, false, false, 654), "html", null, true);
                         echo "
                                     </td>
                                 </tr>
                             ";
                     }
-                    // line 669
+                    // line 658
                     echo "                        ";
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['row'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 670
+                // line 659
                 echo "                        </tbody>
                     </table>
 
@@ -985,7 +974,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['keyName'], $context['table'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 674
+            // line 663
             echo "            </div>
         </div>
         ";
@@ -993,7 +982,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['key'], $context['page'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 677
+        // line 666
         echo "
     </main>
 
@@ -1014,7 +1003,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
 
     public function getDebugInfo()
     {
-        return array (  997 => 677,  989 => 674,  980 => 670,  974 => 669,  967 => 665,  963 => 664,  958 => 662,  952 => 659,  946 => 656,  940 => 653,  931 => 646,  926 => 645,  921 => 644,  917 => 643,  912 => 640,  910 => 639,  907 => 638,  900 => 634,  894 => 631,  888 => 628,  882 => 625,  876 => 622,  871 => 619,  866 => 618,  861 => 617,  857 => 616,  852 => 613,  850 => 612,  847 => 611,  840 => 607,  834 => 604,  828 => 601,  823 => 598,  818 => 597,  813 => 596,  809 => 595,  804 => 592,  802 => 591,  799 => 590,  792 => 586,  788 => 585,  783 => 583,  777 => 580,  771 => 577,  765 => 574,  759 => 571,  754 => 568,  749 => 567,  744 => 566,  740 => 565,  735 => 562,  732 => 561,  728 => 560,  724 => 558,  710 => 546,  708 => 545,  705 => 544,  685 => 526,  683 => 525,  680 => 524,  660 => 506,  658 => 505,  655 => 504,  632 => 483,  630 => 482,  621 => 476,  617 => 474,  613 => 473,  610 => 472,  606 => 470,  602 => 468,  600 => 467,  592 => 461,  588 => 460,  585 => 459,  575 => 454,  565 => 450,  559 => 447,  553 => 444,  548 => 441,  543 => 440,  538 => 439,  534 => 438,  529 => 435,  525 => 434,  508 => 419,  504 => 417,  502 => 416,  499 => 415,  493 => 411,  491 => 410,  487 => 408,  483 => 407,  481 => 406,  478 => 405,  474 => 404,  441 => 376,  429 => 367,  425 => 366,  412 => 356,  408 => 355,  392 => 342,  383 => 336,  372 => 328,  363 => 322,  350 => 312,  37 => 1,);
+        return array (  986 => 666,  978 => 663,  969 => 659,  963 => 658,  956 => 654,  952 => 653,  947 => 651,  941 => 648,  935 => 645,  929 => 642,  920 => 635,  915 => 634,  910 => 633,  906 => 632,  903 => 631,  901 => 630,  898 => 629,  891 => 625,  885 => 622,  879 => 619,  873 => 616,  867 => 613,  862 => 610,  857 => 609,  852 => 608,  848 => 607,  845 => 606,  843 => 605,  840 => 604,  833 => 600,  827 => 597,  821 => 594,  816 => 591,  811 => 590,  806 => 589,  802 => 588,  799 => 587,  797 => 586,  794 => 585,  787 => 581,  783 => 580,  778 => 578,  772 => 575,  766 => 572,  760 => 569,  754 => 566,  749 => 563,  744 => 562,  739 => 561,  735 => 560,  732 => 559,  729 => 558,  725 => 557,  721 => 555,  707 => 543,  705 => 542,  702 => 541,  682 => 523,  680 => 522,  677 => 521,  657 => 503,  655 => 502,  652 => 501,  629 => 480,  627 => 479,  618 => 473,  614 => 471,  610 => 470,  607 => 469,  603 => 467,  599 => 465,  597 => 464,  589 => 458,  585 => 457,  582 => 456,  572 => 451,  562 => 447,  556 => 444,  550 => 441,  541 => 438,  536 => 437,  532 => 436,  529 => 435,  525 => 434,  508 => 419,  504 => 417,  502 => 416,  499 => 415,  493 => 411,  491 => 410,  487 => 408,  483 => 407,  481 => 406,  478 => 405,  474 => 404,  441 => 376,  429 => 367,  425 => 366,  412 => 356,  408 => 355,  392 => 342,  383 => 336,  372 => 328,  363 => 322,  350 => 312,  37 => 1,);
     }
 
     public function getSourceContext()
