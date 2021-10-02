@@ -218,7 +218,6 @@
             left: 0px;
             right: 0px;
             height: 47px;
-            background-color: #FF0066;
             /** Extra personal styles **/
             color: #000;
             text-align: center;
@@ -274,11 +273,16 @@
             display: none;
         }
 
+        .sub-before img{
+            widht: 12px;
+            height: 12px;
+        }
+
         .tr-group__sub .sub-before{
             display: block;
             position:absolute;
-            left: 35px;
-            top: -4px;
+            left: 31px;
+            top: -7px;
         }
 
         .redPrice{
@@ -499,7 +503,7 @@
                             </tr>
                             {% endif %}
 
-                            {% if keyName == 'Организация мероприятия' %}
+                            {% if keyName == 'Организация мероприятия' or keyName == 'Реклама'  or keyName == 'Интернет-маркетинг' %}
                             <tr>
                                 <td style="padding-left: 30px;">
                                     Услуга
@@ -519,7 +523,7 @@
                             </tr>
                             {% endif %}
 
-                            {% if keyName == 'Налоги и сборы' %}
+                            {% if keyName == 'Налоги и сборы' or keyName == 'Гонорары' or keyName == 'Прибыль' %}
                             <tr>
                                 <td style="padding-left: 30px;">
                                     Категория
@@ -602,7 +606,7 @@
                                 </tr>
                             {% endif %}
 
-                            {% if keyName == 'Налоги и сборы' %}
+                            {% if keyName == 'Налоги и сборы' or keyName == 'Гонорары' or keyName == 'Прибыль'  %}
                                 <tr
                                     class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
                                         {% if row.isTitle == 'true' %} tr-group__title {% endif %}
@@ -627,7 +631,7 @@
                                 </tr>
                             {% endif %}
 
-                            {% if keyName == 'Организация мероприятия' %}
+                            {% if keyName == 'Организация мероприятия' or keyName == 'Реклама'  or keyName == 'Интернет-маркетинг' %}
                                 <tr
                                     class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
                                         {% if row.isTitle == 'true' %} tr-group__title {% endif %}
