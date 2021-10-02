@@ -248,7 +248,7 @@
         .dataTable__title{
             text-align: center;
             font-size: 17px;
-            padding-top: 10px;
+            padding-top: 0px;
             padding-bottom: 10px;
         }
     </style>
@@ -413,26 +413,24 @@
 
         {% for key, page in rowsPages2 %}
         <div 
-        {% if key != 0 %}
-        style="page-break-before: always;"
-        {% endif %}>
+        style="page-break-before: always;">
             <div class="main">
                 {% if key == 0 %}
-                <div class="title-zone tz-p1">
+                <div class="title-zone" style="padding-top: 20px;">
                     <span>Финансовый отчет</span>
                 </div>
                 {% endif %}
 
                 {% for key1, row in page|slice(0, 1) %}
-                <div class="dataTable__title">
+                <div class="dataTable__title"
+                {% if key != 0 %}
+                style="padding-top: 20px;"
+                {% endif %}>
                     {{ row.name }}
                 </div>
                 {% endfor %}
 
                 <table class="dataTable" 
-                {% if key != 0 %}
-                style="padding-top: 50px;"
-                {% endif %}
                 cellpadding="9" border="0" cellspacing="0">
                     <thead>
                         <tr>
