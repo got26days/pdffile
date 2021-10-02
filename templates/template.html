@@ -168,6 +168,9 @@
         .main {
             padding-top: 120px;
         }
+        .dataTable__padding{
+            padding-top: 160px;
+        }
 
         .title-zone {
             font-size: 21px;
@@ -348,14 +351,23 @@
     </footer>
 
     <main>
-        {% for page in rowsPages1 %}
-        <div style="page-break-after: never;">
-            <div class="main">
-                <div class="title-zone tz-p1">
-                    <span>Финансовый результат</span>
-                </div>
+        <div class="main">
+        <div class="title-zone tz-p1">
+            <span>Финансовый результат</span>
+        </div>
+        {% for key, page in rowsPages1 %}
+        <div style="page-break-after: always;">
+            
 
-                <table class="dataTable" cellpadding="10" border="0" cellspacing="0">
+
+                <table 
+                {% if key > 0 %}
+                class="dataTable dataTable__padding"
+                {% else %}
+                    class="dataTable"
+                {% endif %}
+
+                cellpadding="9" border="0" cellspacing="0">
                     <thead>
                         <tr>
                             <td style="padding-left: 30px;">
@@ -404,9 +416,10 @@
                     </tbody>
                 </table>
 
-            </div>
+            
         </div>
         {% endfor %}
+        </div>
     </main>
 
 </body>
