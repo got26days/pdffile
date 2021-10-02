@@ -1,7 +1,10 @@
 <?php
 
-require_once('./PdfCreator.php');
-require_once('./pageCreator.php');
+require_once('PdfGenerator/PdfCreator.php');
+require_once('PdfGenerator/pageCreator.php');
+
+use PdfGenerator\pageCreator;
+use PdfGenerator\PdfCreator;
 
 $table = include 'test.php';
 $table2 = include 'test2.php';

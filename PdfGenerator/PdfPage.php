@@ -1,4 +1,6 @@
 <?php
+namespace PdfGenerator;
+
 class PdfPage{
 
 	protected $size;

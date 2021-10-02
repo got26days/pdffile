@@ -1,5 +1,10 @@
 <?php 
-require_once('./PdfPage.php');
+
+namespace PdfGenerator;
+
+require_once('PdfGenerator/PdfPage.php');
+
+use PdfGenerator\PdfZone;
 
 class pageCreator{
 
