@@ -374,6 +374,22 @@
 						],
 					]
 				],
+				[
+					'title' => null, 
+					'data'=> [
+						[
+							'name' => 'Итого',
+							'plan' => '66 500', 
+							'fact' => '0',
+							'paid' => '600 000',
+							'balance' => '-434 323',
+							'balanceColor' => 'redPrice',
+							'isTitle' => false,
+							'isTotal' => true,
+							'isSub' => false,
+						],
+					]
+				],
 			]
 		],
 		4 => [

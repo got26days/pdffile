@@ -51,6 +51,8 @@ class PdfCreator {
 		$twig = new Environment($loader, [
 			'cache' => './compilation_cache',
 		]);
+
+		array_push($this->data, ['domain' => $domain]);
 		
 
 		$html = $twig->render('template.html', $this->data);

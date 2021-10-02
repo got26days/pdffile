@@ -19,25 +19,25 @@
             font-family: 'Montserrat';
             font-style: normal;
             font-weight: normal;
-            src: url(http://test.test/fonts/Montserrat-Regular.ttf) format('truetype');
+            src: url({{ domain }}/fonts/Montserrat-Regular.ttf) format('truetype');
         }
 
         @font-face {
             font-family: 'Montserrat-Bold';
             font-style: normal;
             font-weight: normal;
-            src: url(http://test.test/fonts/Montserrat-Bold.ttf) format('truetype');
+            src: url({{ domain }}/fonts/Montserrat-Bold.ttf) format('truetype');
         }
 
         @font-face {
             font-family: 'HouschkaPro';
             font-style: normal;
             font-weight: normal;
-            src: url(http://test.test/fonts/HouschkaPro-Medium.ttf) format('truetype');
+            src: url({{ domain }}/fonts/HouschkaPro-Medium.ttf) format('truetype');
         }
 
         body {
-            background-image: url('http://test.test/images/back.png');
+            background-image: url('{{ domain }}/images/back.png');
             background-size: 198px 455px;
             background-repeat: repeat;
             color: #000;
@@ -310,7 +310,7 @@
                     <table class="invisable-table">
                         <tr>
                             <td style="width: 14px; padding-right: 7px;">
-                                <img class="flash-svg" src="http://test.test/images/flash.svg" alt="img">
+                                <img class="flash-svg" src="{{ domain }}/images/flash.svg" alt="img">
                             </td>
                             <td align="left" class="header__person">
                                 {{ headerName }}
@@ -320,13 +320,13 @@
                     <table class="invisable-table" style="padding-top: 5px;">
                         <tr>
                             <td style="width: 14px; padding-right: 7px;">
-                                <img class="calendar-svg" src="http://test.test/images/calendar.svg" alt="img">
+                                <img class="calendar-svg" src="{{ domain }}/images/calendar.svg" alt="img">
                             </td>
                             <td align="left" class="header__subtitle" style="width: 80px;">
                                 {{ headerDate }}
                             </td>
                             <td style="padding-right: 7px;">
-                                <img class="point-svg" src="http://test.test/images/point.svg" alt="img">
+                                <img class="point-svg" src="{{ domain }}/images/point.svg" alt="img">
                             </td>
                             <td align="left" class="header__subtitle">
                                 {{ headerCity }}
@@ -361,7 +361,7 @@
                                             </a>
                                         </td>
                                         <td style="padding-top: 8px; width: 24px" align="center">
-                                            <img class="phone-svg" src="http://test.test/images/phone.svg" alt="img">
+                                            <img class="phone-svg" src="{{ domain }}/images/phone.svg" alt="img">
                                         </td>
 
                                     </tr>
@@ -372,7 +372,7 @@
                                             </a>
                                         </td>
                                         <td style="padding-top: 0px; width: 24px" align="center">
-                                            <img class="email-svg" src="http://test.test/images/email.svg" alt="img">
+                                            <img class="email-svg" src="{{ domain }}/images/email.svg" alt="img">
                                         </td>
                                     </tr>
                                     <tr height="10px;">
@@ -380,12 +380,12 @@
                                             <a href="https://{{ headerLink }}/" target="_blank">{{ headerLink }}</a>
                                         </td>
                                         <td style="padding-top: 0px; width: 24px" align="center"><img class="tg-svg"
-                                                src="http://test.test/images/tg.svg" alt="img"></td>
+                                                src="{{ domain }}/images/tg.svg" alt="img"></td>
                                     </tr>
                                 </table>
                             </td>
                             <td style="padding-top:5px;">
-                                <img class="logo-svg" src="http://test.test/images/logo.svg" alt="img">
+                                <img class="logo-svg" src="{{ domain }}/images/logo.svg" alt="img">
                             </td>
                         </tr>
                     </table>
@@ -397,10 +397,10 @@
     <footer>
         <div class="footer">
             <span style="padding-right: 4px;">Артист</span>
-            <span><img class="sign-svg" src="http://test.test/images/sign.svg" alt="img"
+            <span><img class="sign-svg" src="{{ domain }}/images/sign.svg" alt="img"
                     style="padding-right: 15px;"></span>
             <span style="padding-left: 15px; padding-right: 4px;">Организатор</span>
-            <span><img class="sign-svg" src="http://test.test/images/sign.svg" alt="img"></span>
+            <span><img class="sign-svg" src="{{ domain }}/images/sign.svg" alt="img"></span>
         </div>
     </footer>
 
@@ -640,7 +640,7 @@
                                 >
                                     <td class="tr-group__first">
                                        <div class="sub-before">
-                                           <img src="http://test.test/images/arrow.svg" alt="arrow">
+                                           <img src="{{ domain }}/images/arrow.svg" alt="arrow">
                                        </div> 
                                        
                                        {{ row.name }}
