@@ -3,6 +3,7 @@
 ## Установка
 
 ```sh
+cd pdfCode
 composer install
 ```
 

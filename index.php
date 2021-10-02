@@ -1,7 +1,7 @@
 <?php
 
-require_once('PdfGenerator/PdfCreator.php');
-require_once('PdfGenerator/pageCreator.php');
+require_once('pdfCode/PdfGenerator/PdfCreator.php');
+require_once('pdfCode/PdfGenerator/pageCreator.php');
 
 use PdfGenerator\pageCreator;
 use PdfGenerator\PdfCreator;

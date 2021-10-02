@@ -46,11 +46,11 @@ class PdfCreator {
 		$dompdf = new Dompdf(array('enable_remote' => true));
 		// DOCS ссылка на файл верстки
 
-		// $dompdf->loadHtmlFile($domain .'/template/master.php');
+		// $dompdf->loadHtmlFile($domain .'/pdfCode/template/master.php');
 
-		$loader = new FilesystemLoader('./templates');
+		$loader = new FilesystemLoader('./pdfCode/templates');
 		$twig = new Environment($loader, [
-			'cache' => './compilation_cache',
+			'cache' => './pdfCode/compilation_cache',
 		]);
 
 		// $this->data['domain'] = $domain;

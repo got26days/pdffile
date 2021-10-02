@@ -2,7 +2,7 @@
 
 namespace PdfGenerator;
 
-require_once('PdfGenerator/PdfPage.php');
+require_once('PdfPage.php');
 
 use PdfGenerator\PdfZone;
 
