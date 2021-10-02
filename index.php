@@ -7,13 +7,11 @@ $table = include 'test.php';
 
 $table2 = include 'test2.php';
 
-
-
 $page1 = new pageCreator($table, 1);
 $page1 = $page1->create();
 
 $page2 = new pageCreator($table2, 2);
-$page2 = $page2->create();
+$page2 = $page2->createHard();
 
 // header('Content-Type: application/json; charset=utf-8');
 // echo json_encode($page2);
@@ -31,12 +29,6 @@ $data = [
 	'rowsPages1' => $page1,
 	'rowsPages2' => $page2,
 ];
-
-// Массив всегда имеет заголовок
-// Массив переносится, если он больше, чем 30 (вместе с заголовоком)
-// Если на странице уже заполнено что-то, то мы считаем оставшееся место
-// если следующий массив меньше или равен оставшемуся месту, то заносим его
-
 
 
 

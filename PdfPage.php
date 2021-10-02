@@ -7,8 +7,6 @@ class PdfPage{
 
 	public function __construct($pageSize)
 	{
-		// 22 тип 1
-		// 20 тип 2
 		$this->size = $pageSize;
 		$this->elements = [];
 	}
@@ -61,7 +59,16 @@ class PdfZone {
 		$newArray = [];
 
 		foreach($this->pages as $page){
-			$newArray[] = $page->getElements();
+
+			$elements = $page->getElements();
+
+			foreach($elements as $key => $elem){
+				if(count($elem) == 0){
+					unset($elements[$key]);
+				}
+			}
+
+			$newArray[] = $elements;
 		}
 
 		return $newArray;
