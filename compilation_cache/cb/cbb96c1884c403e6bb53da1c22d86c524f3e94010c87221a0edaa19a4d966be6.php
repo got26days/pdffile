@@ -36,6 +36,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
         // line 1
         echo "<!DOCTYPE html>
 <html lang=\"en\">
+
 <head>
     <meta charset=\"UTF-8\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
@@ -204,7 +205,8 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
         .main {
             padding-top: 120px;
         }
-        .dataTable__padding{
+
+        .dataTable__padding {
             padding-top: 160px;
         }
 
@@ -244,7 +246,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
 
         .tr-group__first {
             font-size: 12px;
-            
+
         }
 
         footer {
@@ -276,7 +278,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
             margin-top: 4px;
         }
 
-        .margin-table{
+        .margin-table {
             margin: 0 auto;
         }
     </style>
@@ -299,7 +301,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                             </td>
                             <td align=\"left\" class=\"header__person\">
                                 ";
-        // line 265
+        // line 267
         echo twig_escape_filter($this->env, ($context["headerName"] ?? null), "html", null, true);
         echo "
                             </td>
@@ -312,7 +314,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                             </td>
                             <td align=\"left\" class=\"header__subtitle\" style=\"width: 80px;\">
                                 ";
-        // line 275
+        // line 277
         echo twig_escape_filter($this->env, ($context["headerDate"] ?? null), "html", null, true);
         echo "
                             </td>
@@ -321,7 +323,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                             </td>
                             <td align=\"left\" class=\"header__subtitle\">
                                 ";
-        // line 281
+        // line 283
         echo twig_escape_filter($this->env, ($context["headerCity"] ?? null), "html", null, true);
         echo "
                             </td>
@@ -332,7 +334,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                             </td>
                             <td align=\"left\" class=\"header__nexttitle\">
                                 ";
-        // line 289
+        // line 291
         echo twig_escape_filter($this->env, ($context["headerDay"] ?? null), "html", null, true);
         echo "
                             </td>
@@ -341,7 +343,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                             </td>
                             <td align=\"left\" class=\"header__nexttitle\">
                                 ";
-        // line 295
+        // line 297
         echo twig_escape_filter($this->env, ($context["headerPlace"] ?? null), "html", null, true);
         echo "
                             </td>
@@ -352,15 +354,16 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                     <table>
                         <tr>
                             <td>
-                                <table class=\"invisable-table header__infotable\" cellpadding=\"0\" border=\"0\" cellspacing=\"0\">
+                                <table class=\"invisable-table header__infotable\" cellpadding=\"0\" border=\"0\"
+                                    cellspacing=\"0\">
                                     <tr height=\"10px;\">
                                         <td class=\"header__nexttitle\" align=\"right\" style=\"padding-top: 8px;\">
                                             <a href=\"tel:";
-        // line 307
+        // line 310
         echo twig_escape_filter($this->env, ($context["headerPhone"] ?? null), "html", null, true);
         echo "\" target=\"_blank\">
                                                 ";
-        // line 308
+        // line 311
         echo twig_escape_filter($this->env, ($context["headerPhone"] ?? null), "html", null, true);
         echo "
                                             </a>
@@ -373,11 +376,11 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                                     <tr height=\"10px;\">
                                         <td class=\"header__nexttitle\" align=\"right\">
                                             <a href=\"mailto:";
-        // line 318
+        // line 321
         echo twig_escape_filter($this->env, ($context["headerEmail"] ?? null), "html", null, true);
         echo "\" target=\"_blank\">
                                                 ";
-        // line 319
+        // line 322
         echo twig_escape_filter($this->env, ($context["headerEmail"] ?? null), "html", null, true);
         echo "
                                             </a>
@@ -389,13 +392,14 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                                     <tr height=\"10px;\">
                                         <td class=\"header__nexttitle\" align=\"right\">
                                             <a href=\"https://";
-        // line 328
+        // line 331
         echo twig_escape_filter($this->env, ($context["headerLink"] ?? null), "html", null, true);
         echo "/\" target=\"_blank\">";
         echo twig_escape_filter($this->env, ($context["headerLink"] ?? null), "html", null, true);
         echo "</a>
                                         </td>
-                                        <td style=\"padding-top: 0px; width: 24px\" align=\"center\"><img class=\"tg-svg\" src=\"http://test.test/images/tg.svg\" alt=\"img\"></td>
+                                        <td style=\"padding-top: 0px; width: 24px\" align=\"center\"><img class=\"tg-svg\"
+                                                src=\"http://test.test/images/tg.svg\" alt=\"img\"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -412,41 +416,51 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
     <footer>
         <div class=\"footer\">
             <span style=\"padding-right: 4px;\">Артист</span>
-            <span><img class=\"sign-svg\" src=\"http://test.test/images/sign.svg\" alt=\"img\" style=\"padding-right: 15px;\"></span>
+            <span><img class=\"sign-svg\" src=\"http://test.test/images/sign.svg\" alt=\"img\"
+                    style=\"padding-right: 15px;\"></span>
             <span style=\"padding-left: 15px; padding-right: 4px;\">Организатор</span>
             <span><img class=\"sign-svg\" src=\"http://test.test/images/sign.svg\" alt=\"img\"></span>
         </div>
     </footer>
 
     <main>
-        <div class=\"main\">
-        <div class=\"title-zone tz-p1\">
-            <span>Финансовый результат</span>
-        </div>
         ";
-        // line 358
+        // line 359
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["rowsPages1"] ?? null));
         foreach ($context['_seq'] as $context["key"] => $context["page"]) {
-            // line 359
-            echo "        <div style=\"page-break-after: never;\">
-            
-
-
-                <table 
+            // line 360
+            echo "        <div 
+        ";
+            // line 361
+            if (($context["key"] != 0)) {
+                // line 362
+                echo "        style=\"page-break-before: always;\"
+        ";
+            }
+            // line 363
+            echo ">
+            <div class=\"main\">
                 ";
-            // line 364
-            if (($context["key"] > 0)) {
-                // line 365
-                echo "                class=\"dataTable dataTable__padding\"
-                ";
-            } else {
-                // line 367
-                echo "                    class=\"dataTable\"
+            // line 365
+            if (($context["key"] == 0)) {
+                // line 366
+                echo "                <div class=\"title-zone tz-p1\">
+                    <span>Финансовый результат</span>
+                </div>
                 ";
             }
-            // line 369
-            echo "
+            // line 370
+            echo "                <table class=\"dataTable\" 
+                ";
+            // line 371
+            if (($context["key"] != 0)) {
+                // line 372
+                echo "                style=\"padding-top: 50px;\"
+                ";
+            }
+            // line 374
+            echo "                
                 cellpadding=\"9\" border=\"0\" cellspacing=\"0\">
                     <thead>
                         <tr>
@@ -462,86 +476,66 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
                         </tr>
                     </thead>
                     <tbody>
-                        
+
                         ";
-            // line 386
+            // line 391
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["page"]);
             foreach ($context['_seq'] as $context["_key"] => $context["row"]) {
-                // line 387
-                echo "                            <tr
-                            ";
-                // line 388
-                if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 388) == "true")) {
-                    // line 389
-                    echo "                                class=\"tr-group\"
-                            ";
+                // line 392
+                echo "                        <tr ";
+                if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 392) == "true")) {
+                    echo " class=\"tr-group\" ";
                 } else {
-                    // line 391
-                    echo "                                class=\"tr-simple\"
-                            ";
+                    echo " class=\"tr-simple\" ";
                 }
-                // line 393
-                echo "                            >
-                                <td 
-                                    class=\"tr-group__first\"
-                                
-                                style=\"padding-left: 30px;\">
-                                    ";
-                // line 398
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "name", [], "any", false, false, false, 398), "html", null, true);
+                echo ">
+                            <td class=\"tr-group__first\" style=\"padding-left: 30px;\">
+                                ";
+                // line 394
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "name", [], "any", false, false, false, 394), "html", null, true);
                 echo "
-                                </td>
-                                <td 
-                                ";
-                // line 401
-                if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 401) == "true")) {
-                    // line 402
-                    echo "                                class=\"tr-group__second\"
-                                ";
+                            </td>
+                            <td ";
+                // line 396
+                if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 396) == "true")) {
+                    echo " class=\"tr-group__second\" ";
                 }
-                // line 404
-                echo "                                >
-                                    ";
-                // line 405
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 405), "html", null, true);
+                echo ">
+                                ";
+                // line 397
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "plan", [], "any", false, false, false, 397), "html", null, true);
                 echo "
-                                </td>
-                                <td 
-                                ";
-                // line 408
-                if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 408) == "true")) {
-                    // line 409
-                    echo "                                class=\"tr-group__second\"
-                                ";
+                            </td>
+                            <td ";
+                // line 399
+                if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 399) == "true")) {
+                    echo " class=\"tr-group__second\" ";
                 }
-                // line 411
-                echo "                                >
-                                    ";
-                // line 412
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 412), "html", null, true);
+                echo ">
+                                ";
+                // line 400
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "fact", [], "any", false, false, false, 400), "html", null, true);
                 echo "
-                                </td>
-                            </tr>
+                            </td>
+                        </tr>
                         ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['row'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 416
+            // line 404
             echo "                    </tbody>
                 </table>
-
-            
+            </div>
         </div>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['key'], $context['page'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 422
-        echo "        </div>
-    </main>
+        // line 409
+        echo "    </main>
 
 </body>
 
@@ -560,7 +554,7 @@ class __TwigTemplate_8621af53bbbffa0db40b6eaf34216c9942316f326bbfb9448919205e053
 
     public function getDebugInfo()
     {
-        return array (  543 => 422,  532 => 416,  522 => 412,  519 => 411,  515 => 409,  513 => 408,  507 => 405,  504 => 404,  500 => 402,  498 => 401,  492 => 398,  485 => 393,  481 => 391,  477 => 389,  475 => 388,  472 => 387,  468 => 386,  449 => 369,  445 => 367,  441 => 365,  439 => 364,  432 => 359,  428 => 358,  393 => 328,  381 => 319,  377 => 318,  364 => 308,  360 => 307,  345 => 295,  336 => 289,  325 => 281,  316 => 275,  303 => 265,  37 => 1,);
+        return array (  538 => 409,  528 => 404,  518 => 400,  512 => 399,  507 => 397,  501 => 396,  496 => 394,  486 => 392,  482 => 391,  463 => 374,  459 => 372,  457 => 371,  454 => 370,  448 => 366,  446 => 365,  442 => 363,  438 => 362,  436 => 361,  433 => 360,  429 => 359,  396 => 331,  384 => 322,  380 => 321,  367 => 311,  363 => 310,  347 => 297,  338 => 291,  327 => 283,  318 => 277,  305 => 267,  37 => 1,);
     }
 
     public function getSourceContext()

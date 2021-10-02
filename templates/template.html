@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -168,7 +169,8 @@
         .main {
             padding-top: 120px;
         }
-        .dataTable__padding{
+
+        .dataTable__padding {
             padding-top: 160px;
         }
 
@@ -208,7 +210,7 @@
 
         .tr-group__first {
             font-size: 12px;
-            
+
         }
 
         footer {
@@ -240,7 +242,7 @@
             margin-top: 4px;
         }
 
-        .margin-table{
+        .margin-table {
             margin: 0 auto;
         }
     </style>
@@ -301,7 +303,8 @@
                     <table>
                         <tr>
                             <td>
-                                <table class="invisable-table header__infotable" cellpadding="0" border="0" cellspacing="0">
+                                <table class="invisable-table header__infotable" cellpadding="0" border="0"
+                                    cellspacing="0">
                                     <tr height="10px;">
                                         <td class="header__nexttitle" align="right" style="padding-top: 8px;">
                                             <a href="tel:{{ headerPhone }}" target="_blank">
@@ -327,7 +330,8 @@
                                         <td class="header__nexttitle" align="right">
                                             <a href="https://{{ headerLink }}/" target="_blank">{{ headerLink }}</a>
                                         </td>
-                                        <td style="padding-top: 0px; width: 24px" align="center"><img class="tg-svg" src="http://test.test/images/tg.svg" alt="img"></td>
+                                        <td style="padding-top: 0px; width: 24px" align="center"><img class="tg-svg"
+                                                src="http://test.test/images/tg.svg" alt="img"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -344,29 +348,30 @@
     <footer>
         <div class="footer">
             <span style="padding-right: 4px;">Артист</span>
-            <span><img class="sign-svg" src="http://test.test/images/sign.svg" alt="img" style="padding-right: 15px;"></span>
+            <span><img class="sign-svg" src="http://test.test/images/sign.svg" alt="img"
+                    style="padding-right: 15px;"></span>
             <span style="padding-left: 15px; padding-right: 4px;">Организатор</span>
             <span><img class="sign-svg" src="http://test.test/images/sign.svg" alt="img"></span>
         </div>
     </footer>
 
     <main>
-        <div class="main">
-        <div class="title-zone tz-p1">
-            <span>Финансовый результат</span>
-        </div>
         {% for key, page in rowsPages1 %}
-        <div style="page-break-after: always;">
-            
-
-
-                <table 
-                {% if key > 0 %}
-                class="dataTable dataTable__padding"
-                {% else %}
-                    class="dataTable"
+        <div 
+        {% if key != 0 %}
+        style="page-break-before: always;"
+        {% endif %}>
+            <div class="main">
+                {% if key == 0 %}
+                <div class="title-zone tz-p1">
+                    <span>Финансовый результат</span>
+                </div>
                 {% endif %}
-
+                <table class="dataTable" 
+                {% if key != 0 %}
+                style="padding-top: 50px;"
+                {% endif %}
+                
                 cellpadding="9" border="0" cellspacing="0">
                     <thead>
                         <tr>
@@ -382,44 +387,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
+
                         {% for row in page %}
-                            <tr
-                            {% if row.isTitle == 'true' %}
-                                class="tr-group"
-                            {% else %}
-                                class="tr-simple"
-                            {% endif %}
-                            >
-                                <td 
-                                    class="tr-group__first"
-                                
-                                style="padding-left: 30px;">
-                                    {{ row.name }}
-                                </td>
-                                <td 
-                                {% if row.isTitle == 'true' %}
-                                class="tr-group__second"
-                                {% endif %}
-                                >
-                                    {{ row.plan }}
-                                </td>
-                                <td 
-                                {% if row.isTitle == 'true' %}
-                                class="tr-group__second"
-                                {% endif %}
-                                >
-                                    {{ row.fact }}
-                                </td>
-                            </tr>
+                        <tr {% if row.isTitle=='true' %} class="tr-group" {% else %} class="tr-simple" {% endif %}>
+                            <td class="tr-group__first" style="padding-left: 30px;">
+                                {{ row.name }}
+                            </td>
+                            <td {% if row.isTitle=='true' %} class="tr-group__second" {% endif %}>
+                                {{ row.plan }}
+                            </td>
+                            <td {% if row.isTitle=='true' %} class="tr-group__second" {% endif %}>
+                                {{ row.fact }}
+                            </td>
+                        </tr>
                         {% endfor %}
                     </tbody>
                 </table>
-
-            
+            </div>
         </div>
         {% endfor %}
-        </div>
     </main>
 
 </body>
