@@ -245,6 +245,12 @@
         .margin-table {
             margin: 0 auto;
         }
+        .dataTable__title{
+            text-align: center;
+            font-size: 17px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -371,7 +377,6 @@
                 {% if key != 0 %}
                 style="padding-top: 50px;"
                 {% endif %}
-                
                 cellpadding="9" border="0" cellspacing="0">
                     <thead>
                         <tr>
@@ -387,7 +392,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         {% for row in page %}
                         <tr {% if row.isTitle=='true' %} class="tr-group" {% else %} class="tr-simple" {% endif %}>
                             <td class="tr-group__first" style="padding-left: 30px;">
@@ -406,6 +410,83 @@
             </div>
         </div>
         {% endfor %}
+
+        {% for key, page in rowsPages2 %}
+        <div 
+        {% if key != 0 %}
+        style="page-break-before: always;"
+        {% endif %}>
+            <div class="main">
+                {% if key == 0 %}
+                <div class="title-zone tz-p1">
+                    <span>Финансовый отчет</span>
+                </div>
+                {% endif %}
+
+                {% for key1, row in page|slice(0, 1) %}
+                <div class="dataTable__title">
+                    {{ row.name }}
+                </div>
+                {% endfor %}
+
+                <table class="dataTable" 
+                {% if key != 0 %}
+                style="padding-top: 50px;"
+                {% endif %}
+                cellpadding="9" border="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <td style="padding-left: 30px;">
+                                Оператор
+                            </td>
+                            <td>
+                                План
+                            </td>
+                            <td>
+                                Факт
+                            </td>
+                            <td>
+                                Сумма без АВ
+                            </td>
+                            <td>
+                                Оплачено
+                            </td>
+                            <td>
+                                Остаток
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for key1, row in page %}
+                            {% if key1 > 0 %}
+                            <tr {% if row.isTotal=='true' %} class="tr-group" {% else %} class="tr-simple" {% endif %}>
+                                <td class="tr-group__first {% if row.isTotal=='true' %} tr-group__second {% endif %}" style="padding-left: 30px;" >
+                                    {{ row.operator }}
+                                </td>
+                                <td {% if row.isTotal=='true' %} class="tr-group__second" {% endif %}>
+                                    {{ row.plan }}
+                                </td>
+                                <td {% if row.isTotal=='true' %} class="tr-group__second" {% endif %}>
+                                    {{ row.fact }}
+                                </td>
+                                <td {% if row.isTotal=='true' %} class="tr-group__second" {% endif %}>
+                                    {{ row.sum }}
+                                </td>
+                                <td {% if row.isTotal=='true' %} class="tr-group__second" {% endif %}>
+                                    {{ row.paid }}
+                                </td>
+                                <td {% if row.isTotal=='true' %} class="tr-group__second" {% endif %}>
+                                    {{ row.balance }}
+                                </td>
+                            </tr>
+                            {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endfor %}
+
     </main>
 
 </body>
