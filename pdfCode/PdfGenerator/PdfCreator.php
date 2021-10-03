@@ -8,7 +8,6 @@ use Dompdf\FontMetrics;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 
-
 class PdfCreator {
 
 	protected $data;
