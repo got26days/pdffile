@@ -201,16 +201,16 @@
 
         }
 
-        .tr-group__first{
+        .tr-group__first {
             padding-left: 30px;
             position: relative;
         }
 
-        .tr-simple td{
-            border-bottom: 1px solid  #E8ECF7;
+        .tr-simple td {
+            border-bottom: 1px solid #E8ECF7;
         }
 
-        
+
 
         footer {
             position: fixed;
@@ -243,58 +243,63 @@
         .margin-table {
             margin: 0 auto;
         }
-        .dataTable__title{
+
+        .dataTable__title {
             text-align: center;
             font-size: 17px;
             padding-top: 8px;
             padding-bottom: 10px;
         }
 
-        .tr-group__title td{
+        .tr-group__title td {
             background: #E8ECF7 !important;
             font-family: 'Montserrat-Bold', sans-serif;
         }
 
-        .tr-group__titleOne td{
+        .tr-group__titleOne td {
             background: #FF0066;
             color: #fff;
             font-family: 'Montserrat-Bold', sans-serif;
         }
 
-        .tr-group__titleOne .tr-group__first{
-            font-size: 12px;
+        .tr-group__titleOne .tr-group__first {
+            font-size: 13px;
+            font-family: 'Montserrat', sans-serif !important;
         }
 
-        .tr-group__sub .tr-group__first{
-            padding-left: 43px !important;
+        .tr-group__sub .tr-group__first {
+            padding-left: 46px !important;
         }
 
-        .sub-before{
+        .sub-before {
             display: none;
         }
 
-        .sub-before img{
-            widht: 12px;
+        .sub-before img {
+            width: 12px;
             height: 12px;
         }
 
-        .tr-group__sub .sub-before{
+        .tr-group__sub .sub-before {
             display: block;
-            position:absolute;
+            position: absolute;
             left: 31px;
-            top: -7px;
+            top: 11px;
         }
 
-        .redPrice{
+        .redPrice {
             color: #FF0066 !important;
         }
-        .greenPrice{
+
+        .greenPrice {
             color: #0E9702 !important;
         }
-        table { 
+
+        table {
             border-spacing: 0 !important;
         }
     </style>
+
 </head>
 
 <body>
@@ -406,21 +411,14 @@
 
     <main>
         {% for key, page in rowsPages1 %}
-        <div 
-        {% if key != 0 %}
-        style="page-break-before: always;"
-        {% endif %}>
+        <div {% if key !=0 %} style="page-break-before: always;" {% endif %}>
             <div class="main">
                 {% if key == 0 %}
                 <div class="title-zone tz-p1">
                     <span>Финансовый результат</span>
                 </div>
                 {% endif %}
-                <table class="dataTable" 
-                {% if key != 0 %}
-                style="padding-top: 50px;"
-                {% endif %}
-                cellpadding="9">
+                <table class="dataTable" {% if key !=0 %} style="padding-top: 50px;" {% endif %} cellpadding="9">
                     <thead>
                         <tr>
                             <td style="padding-left: 30px;">
@@ -436,13 +434,11 @@
                     </thead>
                     <tbody>
                         {% for row in page %}
-                        <tr 
-                            class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
+                        <tr class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
                                 {% if row.isTitle == 'true' %} tr-group__titleOne {% endif %}
-                                {% if row.isSub == 'true' %} tr-group__sub {% endif %}"
-                        >
+                                {% if row.isSub == 'true' %} tr-group__sub {% endif %}">
                             <td class="tr-group__first">
-                                {{ row.name }}
+                                {{ row.name|raw }}
                             </td>
                             <td>
                                 {{ row.plan }}
@@ -459,11 +455,10 @@
         {% endfor %}
 
         {% for key, page in rowsPages2 %}
-        <div 
-        style="page-break-before: always;">
+        <div style="page-break-before: always;">
             <div class="main">
 
-           
+
                 <div class="title-zone" style="padding-top: 20px;">
                     {% if key == 0 %}
                     <span>Финансовый отчет</span>
@@ -472,196 +467,188 @@
                     {% endif %}
                 </div>
                 {% for keyName, table in page %}
-                    <div class="dataTable__title"
-                    >
-                        {{ keyName }} 
-                    </div>
+                <div class="dataTable__title">
+                    {{ keyName }}
+                </div>
 
-                    <table class="dataTable" 
-                    cellpadding="9" border="0" cellspacing="0">
-                        <thead>
-                            {% if keyName == 'Продажи' %}
-                            <tr>
-                                <td style="padding-left: 30px; width: 140px;">
-                                    Оператор
-                                </td>
-                                <td>
-                                    План
-                                </td>
-                                <td>
-                                    Факт
-                                </td>
-                                <td style="width: 130px;">
-                                    Сумма без АВ
-                                </td>
-                                <td>
-                                    Оплачено
-                                </td>
-                                <td>
-                                    Остаток
-                                </td>
-                            </tr>
-                            {% endif %}
+                <table class="dataTable" cellpadding="9" border="0" cellspacing="0">
+                    <thead>
+                        {% if keyName == 'Продажи' %}
+                        <tr>
+                            <td style="padding-left: 30px; width: 140px;">
+                                Оператор
+                            </td>
+                            <td>
+                                План
+                            </td>
+                            <td>
+                                Факт
+                            </td>
+                            <td style="width: 130px;">
+                                Сумма без АВ
+                            </td>
+                            <td>
+                                Оплачено
+                            </td>
+                            <td>
+                                Остаток
+                            </td>
+                        </tr>
+                        {% endif %}
 
-                            {% if keyName == 'Организация мероприятия' or keyName == 'Реклама'  or keyName == 'Интернет-маркетинг' %}
-                            <tr>
-                                <td style="padding-left: 30px;">
-                                    Услуга
-                                </td>
-                                <td>
-                                    План
-                                </td>
-                                <td>
-                                    Факт
-                                </td>
-                                <td>
-                                    Оплачено
-                                </td>
-                                <td>
-                                    Остаток
-                                </td>
-                            </tr>
-                            {% endif %}
+                        {% if keyName == 'Организация мероприятия' or keyName == 'Реклама' or keyName ==
+                        'Интернет-маркетинг' %}
+                        <tr>
+                            <td style="padding-left: 30px;">
+                                Услуга
+                            </td>
+                            <td>
+                                План
+                            </td>
+                            <td>
+                                Факт
+                            </td>
+                            <td>
+                                Оплачено
+                            </td>
+                            <td>
+                                Остаток
+                            </td>
+                        </tr>
+                        {% endif %}
 
-                            {% if keyName == 'Налоги и сборы' or keyName == 'Гонорары' or keyName == 'Прибыль' %}
-                            <tr>
-                                <td style="padding-left: 30px;">
-                                    Категория
-                                </td>
-                                <td>
-                                    План
-                                </td>
-                                <td>
-                                    Факт
-                                </td>
-                                <td>
-                                    Оплачено
-                                </td>
-                                <td>
-                                    Остаток
-                                </td>
-                            </tr>
-                            {% endif %}
+                        {% if keyName == 'Налоги и сборы' or keyName == 'Гонорары' or keyName == 'Прибыль' %}
+                        <tr>
+                            <td style="padding-left: 30px;">
+                                Категория
+                            </td>
+                            <td>
+                                План
+                            </td>
+                            <td>
+                                Факт
+                            </td>
+                            <td>
+                                Оплачено
+                            </td>
+                            <td>
+                                Остаток
+                            </td>
+                        </tr>
+                        {% endif %}
 
-                            {% if keyName == 'АВ билетных операторов' %}
-                            <tr>
-                                <td style="padding-left: 30px;">
-                                    Оператор
-                                </td>
-                                <td>
-                                    План
-                                </td>
-                                <td>
-                                    Факт
-                                </td>
-                            </tr>
-                            {% endif %}
-                        </thead>
-                        <tbody>
-                            {% for row in table %}
-                                {% if keyName == 'Продажи'%}
-                                <tr 
-                                    class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
+                        {% if keyName == 'АВ билетных операторов' %}
+                        <tr>
+                            <td style="padding-left: 30px;">
+                                Оператор
+                            </td>
+                            <td>
+                                План
+                            </td>
+                            <td>
+                                Факт
+                            </td>
+                        </tr>
+                        {% endif %}
+                    </thead>
+                    <tbody>
+                        {% for row in table %}
+                        {% if keyName == 'Продажи'%}
+                        <tr class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
                                         {% if row.isTitle == 'true' %} tr-group__title {% endif %}
                                         {% if row.isSub == 'true' %} tr-group__sub {% endif %}
-                                    "
-                                >
-                                    <td class="tr-group__first">
-                                        {{ row.operator }}
-                                    </td>
-                                    <td>
-                                        {{ row.plan }}
-                                    </td>
-                                    <td>
-                                        {{ row.fact }}
-                                    </td>
-                                    <td>
-                                        {{ row.sum }}
-                                    </td>
-                                    <td>
-                                        {{ row.paid }}
-                                    </td>
-                                    <td class="{{ row.balanceColor }}">
-                                        {{ row.balance }}
-                                    </td>
-                                </tr>
-                            {% endif %}
+                                    ">
+                            <td class="tr-group__first">
+                                {{ row.operator }}
+                            </td>
+                            <td>
+                                {{ row.plan }}
+                            </td>
+                            <td>
+                                {{ row.fact }}
+                            </td>
+                            <td>
+                                {{ row.sum }}
+                            </td>
+                            <td>
+                                {{ row.paid }}
+                            </td>
+                            <td class="{{ row.balanceColor }}">
+                                {{ row.balance }}
+                            </td>
+                        </tr>
+                        {% endif %}
 
-                            {% if keyName == 'АВ билетных операторов' %}
-                                <tr
-                                    class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
+                        {% if keyName == 'АВ билетных операторов' %}
+                        <tr class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
                                         {% if row.isTitle == 'true' %} tr-group__title {% endif %}
                                         {% if row.isSub == 'true' %} tr-group__sub {% endif %}
-                                    "
-                                >
-                                    <td class="tr-group__first">
-                                        {{ row.name }}
-                                    </td>
-                                    <td>
-                                        {{ row.plan }}
-                                    </td>
-                                    <td>
-                                        {{ row.fact }}
-                                    </td>
-                                </tr>
-                            {% endif %}
+                                    ">
+                            <td class="tr-group__first">
+                                {{ row.name }}
+                            </td>
+                            <td>
+                                {{ row.plan }}
+                            </td>
+                            <td>
+                                {{ row.fact }}
+                            </td>
+                        </tr>
+                        {% endif %}
 
-                            {% if keyName == 'Налоги и сборы' or keyName == 'Гонорары' or keyName == 'Прибыль'  %}
-                                <tr
-                                    class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
+                        {% if keyName == 'Налоги и сборы' or keyName == 'Гонорары' or keyName == 'Прибыль' %}
+                        <tr class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
                                         {% if row.isTitle == 'true' %} tr-group__title {% endif %}
                                         {% if row.isSub == 'true' %} tr-group__sub {% endif %}
-                                    "
-                                >
-                                    <td class="tr-group__first">
-                                        {{ row.category }}
-                                    </td>
-                                    <td>
-                                        {{ row.plan }}
-                                    </td>
-                                    <td>
-                                        {{ row.fact }}
-                                    </td>
-                                    <td>
-                                        {{ row.paid }}
-                                    </td>
-                                    <td>
-                                        {{ row.balance }}
-                                    </td>
-                                </tr>
-                            {% endif %}
+                                    ">
+                            <td class="tr-group__first">
+                                {{ row.category }}
+                            </td>
+                            <td>
+                                {{ row.plan }}
+                            </td>
+                            <td>
+                                {{ row.fact }}
+                            </td>
+                            <td>
+                                {{ row.paid }}
+                            </td>
+                            <td class="{{ row.balanceColor }}">
+                                {{ row.balance }}
+                            </td>
+                        </tr>
+                        {% endif %}
 
-                            {% if keyName == 'Организация мероприятия' or keyName == 'Реклама'  or keyName == 'Интернет-маркетинг' %}
-                                <tr
-                                    class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
+                        {% if keyName == 'Организация мероприятия' or keyName == 'Реклама' or keyName ==
+                        'Интернет-маркетинг' %}
+                        <tr class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
                                         {% if row.isTitle == 'true' %} tr-group__title {% endif %}
                                         {% if row.isSub == 'true' %} tr-group__sub {% endif %}
-                                    "
-                                >
-                                    <td class="tr-group__first">
-                                       <div class="sub-before">
-                                           <img src="{{ domain }}/images/arrow.svg" alt="arrow">
-                                       </div> 
-                                       
-                                       {{ row.name }}
-                                    </td>
-                                    <td>
-                                        {{ row.plan }}
-                                    </td>
-                                    <td>
-                                        {{ row.fact }}
-                                    </td>
-                                    <td>
-                                        {{ row.paid }}
-                                    </td>
-                                    <td class="{{ row.balanceColor }}">
-                                        {{ row.balance }}
-                                    </td>
-                                </tr>
-                            {% endif %}
+                                    ">
+                            <td class="tr-group__first">
+                                <div class="sub-before">
+                                    <img src="{{ domain }}/images/arrow.svg" alt="arrow">
+                                </div>
+
+                                {{ row.name }}
+                            </td>
+                            <td>
+                                {{ row.plan }}
+                            </td>
+                            <td>
+                                {{ row.fact }}
+                            </td>
+                            <td>
+                                {{ row.paid }}
+                            </td>
+                            <td class="{{ row.balanceColor }}">
+                                {{ row.balance }}
+                            </td>
+                        </tr>
+                        {% endif %}
                         {% endfor %}
-                        </tbody>
-                    </table>
+                    </tbody>
+                </table>
 
                 {% endfor %}
             </div>

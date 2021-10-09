@@ -1,13 +1,13 @@
 <?php
 
-require_once('./pdfCode/PdfGenerator/PdfCreator.php');
-require_once('./pdfCode/PdfGenerator/pageCreator.php');
+require_once('./123/pdfCode/PdfGenerator/PdfCreator.php');
+require_once('./123/pdfCode/PdfGenerator/pageCreator.php');
 
 use PdfGenerator\pageCreator;
 use PdfGenerator\PdfCreator;
 
-$table = include 'test.php';
-$table2 = include 'test2.php';
+$table = include './test.php';
+$table2 = include './test2.php';
 
 $page1 = new pageCreator($table, 1);
 $page1 = $page1->create();
@@ -15,13 +15,14 @@ $page1 = $page1->create();
 $page2 = new pageCreator($table2, 2);
 $page2 = $page2->createHard();
 
+// Для проверки пагинации страниц 
 // header('Content-Type: application/json; charset=utf-8');
 // echo json_encode($page2);
 // exit(0);
 
 $data = [
-	'domain' => 'http://palagov.beget.tech',
-	'headerName' =>'Евгений Маргулис',
+	'domain' => 'http://test.test/123/pdfCode/',
+	'headerName' => 'Евгений Маргулис',
 	'headerDate' => date("m.d.Y"),
 	'headerCity' => 'Красноярск',
 	'headerDay' => 'СБ, 18:00',
@@ -38,5 +39,3 @@ $data = [
 $pdf = new PdfCreator($data);
 
 return $pdf->create();
-
-

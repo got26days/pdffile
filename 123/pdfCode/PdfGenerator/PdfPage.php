@@ -1,7 +1,9 @@
 <?php
+
 namespace PdfGenerator;
 
-class PdfPage{
+class PdfPage
+{
 
 	protected $size;
 	protected $elements;
@@ -12,35 +14,40 @@ class PdfPage{
 		$this->size = $pageSize;
 		$this->elements = [];
 	}
-	
-	public function getElements(){
+
+	public function getElements()
+	{
 		return $this->elements;
 	}
 
-	public function getSize(){
+	public function getSize()
+	{
 		return $this->size;
 	}
 
-	public function addElement($element){
+	public function addElement($element)
+	{
 		array_push($this->elements, $element);
 		$this->size--;
 		return $this->elements;
 	}
 
-	public function addElementToKey($element, $key){
+	public function addElementToKey($element, $key)
+	{
 		$this->elements[$key][] = $element;
 		$this->size--;
 		return $this->elements;
 	}
 
-	public function addKey($key){
+	public function addKey($key)
+	{
 		$this->elements[$key] = [];
 		$this->size--;
 	}
-
 }
 
-class PdfZone {
+class PdfZone
+{
 
 	protected $pages;
 	protected $pageSize;
@@ -51,21 +58,23 @@ class PdfZone {
 		$this->pageSize = $pageSize;
 	}
 
-	public function createPage(){
+	public function createPage()
+	{
 		$this->pages[] = new PdfPage($this->pageSize);
 		return end($this->pages);
 	}
 
-	public function getPages(){
+	public function getPages()
+	{
 
 		$newArray = [];
 
-		foreach($this->pages as $page){
+		foreach ($this->pages as $page) {
 
 			$elements = $page->getElements();
 
-			foreach($elements as $key => $elem){
-				if(count($elem) == 0){
+			foreach ($elements as $key => $elem) {
+				if (count($elem) == 0) {
 					unset($elements[$key]);
 				}
 			}

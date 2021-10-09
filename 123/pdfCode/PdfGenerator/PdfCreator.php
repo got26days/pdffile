@@ -1,14 +1,17 @@
 <?php
+
 namespace PdfGenerator;
 
 require_once __DIR__ . '../../vendor/autoload.php';
 
 use Dompdf\Dompdf;
+use Dompdf\Options;
 use Dompdf\FontMetrics;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 
-class PdfCreator {
+class PdfCreator
+{
 
 	protected $data;
 
@@ -17,46 +20,67 @@ class PdfCreator {
 		$this->data = $data;
 	}
 
-	public function getDomain(){
+	public function getDomain()
+	{
 		// Program to display URL of current page.
-	
-		if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
-		$link = "https";
+
+		if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+			$link = "https";
 		else
-		$link = "http";
+			$link = "http";
 
 		// Here append the common URL characters.
 		$link .= "://";
 
 		// Append the host(domain name, ip) to the URL.
 		$link .= $_SERVER['HTTP_HOST'];
-		
+
 		// Print the link
 		return $link;
 	}
 
-	public function create(){
-	
-		// site url
+	public function create()
+	{
+
+		// echo phpinfo();
+		// exit;
+
+		$parentFolder = '/123/';
+
+		$fullFolder = $_SERVER['DOCUMENT_ROOT'] . $parentFolder;
+
 		$domain = $this->getDomain();
 
-		// instantiate and use the dompdf class
+		$options = new Options();
+		$options->set('isRemoteEnabled', TRUE);
+		$options->set('tempDir', $fullFolder . '/pdfCode/tempDir');
 
-		$dompdf = new Dompdf(array('enable_remote' => true));
+		$dompdf = new Dompdf($options);
+
 		// DOCS ссылка на файл верстки
 
-		// $dompdf->loadHtmlFile($domain .'/pdfCode/template/master.php');
+		// $dompdf->loadHtmlFile($domain . '/pdfCode/template/master.php');
+		// echo $_SERVER['DOCUMENT_ROOT'];
+		// exit(0);
 
-		$loader = new FilesystemLoader('./pdfCode/templates');
+		$loader = new FilesystemLoader($fullFolder . '/pdfCode/templates');
 		$twig = new Environment($loader, [
-			'cache' => './pdfCode/compilation_cache',
+			'cache' => $fullFolder . '/pdfCode/compilation_cache',
+			'auto_reload' => true,
 		]);
 
-		// $this->data['domain'] = $domain;
+		// $this->data['domain'] = $domain;s
 
 		$html = $twig->render('template.html', $this->data);
+		// echo $html;
+		// exit(0);
+
+		// $html = '<link type="text/css" href="/pdfCode/style/css.css" rel="stylesheet" />' . $html;
+
 
 		$dompdf->loadHtml($html);
+
+
 
 		// (Optional) Setup the paper size and orientation
 		$dompdf->setPaper('A4');
@@ -76,10 +100,4 @@ class PdfCreator {
 
 		return $dompdf->stream("dompdf_out.pdf", array("Attachment" => false));
 	}
-
 }
-
-
-
-
-
