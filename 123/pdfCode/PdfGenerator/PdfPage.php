@@ -43,6 +43,7 @@ class PdfPage
 	{
 		$this->elements[$key] = [];
 		$this->size--;
+		$this->size--;
 	}
 }
 

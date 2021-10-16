@@ -14,10 +14,13 @@ class PdfCreator
 {
 
 	protected $data;
+	protected $type;
 
-	public function __construct($data)
+	public function __construct($data, $type = 1, $lang = 'ru')
 	{
 		$this->data = $data;
+		$this->type = $type;
+		$this->lang = '-' . $lang;
 	}
 
 	public function getDomain()
@@ -69,13 +72,18 @@ class PdfCreator
 			'auto_reload' => true,
 		]);
 
-		// $this->data['domain'] = $domain;s
 
-		$html = $twig->render('template.html', $this->data);
+		$temlateName = 'template';
+		if ($this->type == 2) {
+			$temlateName = 'templateChart';
+		}
+
+		$temlateName = $temlateName . $this->lang . '.html';
+
+		$html = $twig->render($temlateName, $this->data);
+
 		// echo $html;
 		// exit(0);
-
-		// $html = '<link type="text/css" href="/pdfCode/style/css.css" rel="stylesheet" />' . $html;
 
 
 		$dompdf->loadHtml($html);
