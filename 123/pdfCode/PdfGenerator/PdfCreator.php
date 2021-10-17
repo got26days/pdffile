@@ -15,44 +15,23 @@ class PdfCreator
 
 	protected $data;
 	protected $type;
+	protected $lang;
+	protected $page;
+	protected $folder;
 
-	public function __construct($data, $type = 1, $lang = 'ru')
+	public function __construct($page = 1, $data = [], $type = 1, $lang = 'ru', $folder = '/')
 	{
 		$this->data = $data;
 		$this->type = $type;
 		$this->lang = '-' . $lang;
-	}
-
-	public function getDomain()
-	{
-		// Program to display URL of current page.
-
-		if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
-			$link = "https";
-		else
-			$link = "http";
-
-		// Here append the common URL characters.
-		$link .= "://";
-
-		// Append the host(domain name, ip) to the URL.
-		$link .= $_SERVER['HTTP_HOST'];
-
-		// Print the link
-		return $link;
+		$this->page = $page;
+		$this->folder = $folder;
 	}
 
 	public function create()
 	{
 
-		// echo phpinfo();
-		// exit;
-
-		$parentFolder = '/123/';
-
-		$fullFolder = $_SERVER['DOCUMENT_ROOT'] . $parentFolder;
-
-		$domain = $this->getDomain();
+		$fullFolder = $_SERVER['DOCUMENT_ROOT'] . $this->folder;
 
 		$options = new Options();
 		$options->set('isRemoteEnabled', TRUE);
@@ -60,25 +39,18 @@ class PdfCreator
 
 		$dompdf = new Dompdf($options);
 
-		// DOCS ссылка на файл верстки
-
-		// $dompdf->loadHtmlFile($domain . '/pdfCode/template/master.php');
-		// echo $_SERVER['DOCUMENT_ROOT'];
-		// exit(0);
-
 		$loader = new FilesystemLoader($fullFolder . '/pdfCode/templates');
 		$twig = new Environment($loader, [
 			'cache' => $fullFolder . '/pdfCode/compilation_cache',
 			'auto_reload' => true,
 		]);
 
-
 		$temlateName = 'template';
 		if ($this->type == 2) {
 			$temlateName = 'templateChart';
 		}
 
-		$temlateName = $temlateName . $this->lang . '.html';
+		$temlateName = $temlateName . $this->page . $this->lang . '.html';
 
 		$html = $twig->render($temlateName, $this->data);
 

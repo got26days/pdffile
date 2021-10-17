@@ -1,13 +1,54 @@
 <?php
 return [
 	0 => [
+		'title' => [
+			'name' => 'Доход',
+			'plan' => '4 800 000 / 4000 шт / 80.00%	',
+			'fact' => '979 000 / 1719 шт / 16.32%',
+			'isTitle' => 'true',
+		],
 		'data' => [
 			[
-				'tickets' => '914 шт.',
-				'invitation' => '34 шт.',
-				'shaft' => '4 355 500 руб',
-				'sale' => '880 шт.',
-				'avg' => '4 765 руб'
+				'name' => 'ООО "Рога и копыта"',
+				'plan' => '-',
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'Касса3',
+				'plan' => '-',
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'Новая реклама',
+				'plan' => '-',
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'Test',
+				'plan' => '-',
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'Касса3',
+				'plan' => '-',
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'Новая реклама',
+				'plan' => '2-1',
+				'fact' => '114 550',
+				'isTitle' => 'false',
+			],
+			[
+				'name' => 'Test',
+				'plan' => '2-1',
+				'fact' => '114 550',
+				'isTitle' => 'false',
 			],
 		]
 	],

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {% include 'style.html' %}
+
+</head>
+
+<body>
+
+    {% include 'header.html' %}
+
+    {% include 'footer.html' %}
+
+    <main>
+
+        <div>
+            <div class="main">
+                <div class="dataTable__title">
+                    Продажи по оперторам
+                </div>
+                <div class="chart-wrapper">
+                    <img class="chart" src="{{ chart1 }}" alt="chart">
+                </div>
+
+                <table class="dataTable" cellpadding="9">
+                    <thead>
+                        <tr class="headerTitle">
+                            <td colspan="5">
+                                Всего продано
+                            </td>
+                        </tr>
+                        <tr class="dataTable-manyhr">
+                            <td style="padding-left: 30px; width: 190px;">
+                                Оператор
+                            </td>
+                            <td>
+                                Количество проданных
+                            </td>
+                            <td>
+                                Сумма
+                                проданных
+                            </td>
+                            <td>
+                                Количество возвращенных
+                            </td>
+                            <td>
+                                Сумма возвращенных
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in rows %}
+                        <tr
+                            class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
+                                                                                {% if row.isTitle == 'true' %} tr-group__titleOne {% endif %}
+                                                                                {% if row.isSub == 'true' %} tr-group__sub {% endif %}">
+                            <td class="tr-group__first">
+                                {{ row.operator|raw }}
+                            </td>
+                            <td>
+                                {{ row.number_sold }}
+                            </td>
+                            <td>
+                                {{ row.sum_sold }}
+                            </td>
+                            <td>
+                                {{ row.number_return }}
+                            </td>
+                            <td>
+                                {{ row.sum_return }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

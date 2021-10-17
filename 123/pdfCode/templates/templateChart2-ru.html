@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {% include 'style.html' %}
+
+</head>
+
+<body>
+
+    {% include 'header.html' %}
+
+    {% include 'footer.html' %}
+
+    <main>
+
+        <div>
+            <div class="main">
+                <div class="dataTable__title">
+                    Сумма продаж
+                </div>
+                <div class="chart-wrapper">
+                    <img class="chart" src="{{ chart1 }}" alt="chart">
+                </div>
+                <div class="dataTable__title">
+                    Количество билетов
+                </div>
+                <div class="chart-wrapper">
+                    <img class="chart" src="{{ chart2 }}" alt="chart">
+                </div>
+
+                <table class="dataTable" cellpadding="9">
+                    <thead>
+                        <tr>
+                            <td style="padding-left: 30px;">
+
+                            </td>
+                            <td>
+                                Билеты
+                            </td>
+                            <td>
+                                % Билетов
+                            </td>
+                            <td>
+                                Сумма
+                            </td>
+                            <td>
+                                % Сумма
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in rows %}
+                        <tr
+                            class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
+                                                                {% if row.isTitle == 'true' %} tr-group__titleOne {% endif %}
+                                                                {% if row.isSub == 'true' %} tr-group__sub {% endif %}">
+                            <td class="tr-group__first">
+                                {{ row.name|raw }}
+                            </td>
+                            <td>
+                                {{ row.tickets }}
+                            </td>
+                            <td>
+                                {{ row.percent_tickets }}
+                            </td>
+                            <td>
+                                {{ row.sum }}
+                            </td>
+                            <td>
+                                {{ row.percent_sum }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

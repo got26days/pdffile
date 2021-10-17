@@ -6,18 +6,13 @@ require_once('./123/pdfCode/PdfGenerator/pageCreator.php');
 use PdfGenerator\pageCreator;
 use PdfGenerator\PdfCreator;
 
-$table = include './test.php';
-$table2 = include './test2.php';
+$table = include './test5.php';
 
-$page1 = new pageCreator($table, 1);
-$page1 = $page1->create();
-
-$page2 = new pageCreator($table2, 2);
-$page2 = $page2->createHard();
+$page = $table;
 
 // Для проверки пагинации страниц 
 // header('Content-Type: application/json; charset=utf-8');
-// echo json_encode($page2);
+// echo json_encode($page);
 // exit(0);
 
 $data = [
@@ -30,11 +25,10 @@ $data = [
 	'headerPhone' => '+7 (495) 201-25-05',
 	'headerEmail' => 'info@neborecords.ru',
 	'headerLink' => 'neborecords.ru',
-	'rowsPages1' => $page1,
-	'rowsPages2' => $page2,
+	'rows' => $page,
+	'chart1' => 'http://test.test/1.png',
 ];
 
-
-$pdf = new PdfCreator(0, $data, 1, 'ru', '/123/');
+$pdf = new PdfCreator(3, $data, 2, 'ru', '/123/');
 
 return $pdf->create();
