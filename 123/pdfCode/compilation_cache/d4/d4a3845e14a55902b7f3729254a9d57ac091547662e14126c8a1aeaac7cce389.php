@@ -39,529 +39,33 @@ class __TwigTemplate_37740fbad35aeadf17f5a25647b636fcec2f773bf75edf13535c027e51e
 
 <head>
     <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
-    <style>
-        img {
-            display: block
-        }
-
-        @page {
-            margin: 0px;
-        }
-
-
-        @font-face {
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: normal;
-            src: url(";
-        // line 20
-        echo twig_escape_filter($this->env, ($context["domain"] ?? null), "html", null, true);
-        echo "/fonts/Montserrat-Regular.ttf) format('truetype');
-        }
-
-        @font-face {
-            font-family: 'Montserrat-Bold';
-            font-style: normal;
-            font-weight: normal;
-            src: url(";
-        // line 27
-        echo twig_escape_filter($this->env, ($context["domain"] ?? null), "html", null, true);
-        echo "/fonts/Montserrat-Bold.ttf) format('truetype');
-        }
-
-        @font-face {
-            font-family: 'HouschkaPro';
-            font-style: normal;
-            font-weight: normal;
-            src: url(";
-        // line 34
-        echo twig_escape_filter($this->env, ($context["domain"] ?? null), "html", null, true);
-        echo "/fonts/HouschkaPro-Medium.ttf) format('truetype');
-        }
-
-        body {
-            color: #000;
-            font-family: 'Montserrat';
-            background-image: url('";
-        // line 40
-        echo twig_escape_filter($this->env, ($context["domain"] ?? null), "html", null, true);
-        echo "/images/back.png');
-            background-size: 198px 455px;
-            background-repeat: repeat;
-
-            padding-top: 145px;
-            padding-bottom: 30px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #000;
-        }
-
-        header {
-            padding-top: 20px;
-            position: fixed;
-            top: 0px;
-            left: 0px;
-            right: 0px;
-            height: 120px;
-
-            /** Extra personal styles **/
-            color: black;
-            text-align: center;
-            line-height: 35px;
-        }
-
-        main {
-            padding: 0px 45px;
-        }
-
-        .header {
-            padding-left: 45px;
-            padding-right: 45px;
-            padding-bottom: 15px;
-        }
-
-        .header__title {
-            text-align: center;
-            font-family: 'Montserrat-Bold', sans-serif;
-            font-size: 14px;
-            line-height: 16, 8px;
-        }
-
-        .header__info {
-            padding-top: 5px;
-            width: 100%;
-        }
-
-        .header__info-left {
-            float: left;
-        }
-
-        .header__info-right {
-            float: right;
-        }
-
-        .header__person {
-            font-family: 'Montserrat-Bold', sans-serif;
-            font-size: 16px;
-            line-height: 140%;
-        }
-
-        .flash-svg {
-            width: 15px;
-            height: 14px;
-            margin-top: 5px;
-        }
-
-        .point-svg {
-            width: 15px;
-            height: 14px;
-            margin-top: 5px;
-        }
-
-        .calendar-svg {
-            width: 13px;
-            height: 13px;
-            margin-top: 3px;
-        }
-
-        .header__subtitle {
-            font-family: 'Montserrat-Bold', sans-serif;
-            font-size: 11px;
-            line-height: 140%;
-        }
-
-        .header__nexttitle {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            line-height: 140%;
-        }
-
-        .logo-svg {
-            width: 72px;
-            height: 78px;
-            display: block;
-        }
-
-        .phone-svg {
-            width: 13px;
-            height: 13px;
-            margin-top: 3px;
-        }
-
-        .email-svg {
-            width: 13px;
-            height: 13px;
-            margin-top: 3px;
-        }
-
-        .tg-svg {
-            width: 13px;
-            height: 13px;
-            margin-top: 3px;
-        }
-
-        .header__logo-area {
-            float: right;
-        }
-
-        .header__infotable {
-            float: left;
-            padding-top: 4px;
-        }
-
-        .invisable-table {
-            vertical-align: middle;
-        }
-
-        .dataTable__padding {
-            padding-top: 160px;
-        }
-
-        .title-zone {
-            font-size: 21px;
-            font-family: 'Montserrat-Bold', sans-serif;
-            text-align: center;
-        }
-
-        .dataTable {
-            width: 100%;
-            font-size: 11px;
-        }
-
-
-
-        .dataTable thead tr td {
-            background-color: #000;
-            color: #fff;
-        }
-
-        .tz-p1 {
-            padding-bottom: 15px;
-        }
-
-        .tr-group td {
-            background: #FF0066;
-            color: #fff;
-            font-family: 'Montserrat-Bold', sans-serif;
-
-        }
-
-        .tr-group__first {
-            padding-left: 30px;
-            position: relative;
-        }
-
-        .tr-simple td {
-            border-bottom: 1px solid #E8ECF7;
-        }
-
-
-
-        footer {
-            position: fixed;
-            background-color: red;
-            bottom: 10px;
-            left: 0px;
-            right: 0px;
-            height: 47px;
-            /** Extra personal styles **/
-            color: #000;
-            text-align: center;
-            line-height: 35px;
-        }
-
-        .footer {
-            font-family: 'HouschkaPro', sans-serif;
-            font-size: 11px;
-            margin: 0 auto;
-            text-align: center;
-            align-items: center;
-            margin-top: 8px;
-        }
-
-
-        .sign-svg {
-            width: 150px;
-            margin-left: 4px;
-            margin-top: 4px;
-        }
-
-        .margin-table {
-            margin: 0 auto;
-        }
-
-        .dataTable__title {
-            text-align: center;
-            font-size: 17px;
-            padding-bottom: 10px;
-            padding-top: 15px;
-            line-height: 12px;
-        }
-
-        .headerTitle {
-            text-align: center;
-            font-size: 17px;
-            line-height: 12px;
-        }
-
-        .headerTitle td {
-            background: none !important;
-            color: black !important;
-            padding-bottom: 12px !important;
-            padding-top: 10px !important;
-        }
-
-        .tr-group__title td {
-            background: #E8ECF7 !important;
-            font-family: 'Montserrat-Bold', sans-serif;
-        }
-
-        .tr-group__titleOne td {
-            background: #FF0066;
-            color: #fff;
-            font-family: 'Montserrat-Bold', sans-serif;
-        }
-
-        .tr-group__titleOne .tr-group__first {
-            font-size: 13px;
-            font-family: 'Montserrat', sans-serif !important;
-        }
-
-        .tr-group__sub .tr-group__first {
-            padding-left: 46px !important;
-        }
-
-        .sub-before {
-            display: none;
-        }
-
-        .sub-before img {
-            width: 12px;
-            height: 12px;
-        }
-
-        .tr-group__sub .sub-before {
-            display: block;
-            position: absolute;
-            left: 31px;
-            top: 11px;
-        }
-
-        .redPrice {
-            color: #FF0066 !important;
-        }
-
-        .greenPrice {
-            color: #0E9702 !important;
-        }
-
-        table {
-            border-spacing: 0 !important;
-        }
-
-        .tr-plan td {
-            background: #E8ECF7;
-        }
-
-        .zone-circle {
-            width: 18px;
-            height: 18px;
-            border-radius: 9px;
-        }
-
-        .chart {
-            width: 100%;
-        }
-
-        .chart-wrapper {
-            padding: 8px 15px;
-        }
-
-        .dataTable-manyhr td {
-            line-height: 9px;
-            padding-top: 5px !important;
-            padding-bottom: 5px !important;
-        }
-    </style>
-
+    ";
+        // line 6
+        $this->loadTemplate("style.html", "templateChart1-ru.html", 6)->display($context);
+        // line 7
+        echo "
 </head>
 
 <body>
 
-    <!-- Define header and footer blocks before your content -->
-    <header>
-        <div class=\"header\">
-            <div class=\"header__title\">
-                Отчет по продажам
-            </div>
-            <div class=\"header__info\">
-                <div class=\"header__info-left\">
-                    <table class=\"invisable-table\">
-                        <tr>
-                            <td style=\"width: 14px; padding-right: 7px;\">
-                                <img class=\"flash-svg\" src=\"";
-        // line 356
-        echo twig_escape_filter($this->env, ($context["domain"] ?? null), "html", null, true);
-        echo "/images/flash.svg\" alt=\"img\">
-                            </td>
-                            <td align=\"left\" class=\"header__person\">
-                                ";
-        // line 359
-        echo twig_escape_filter($this->env, ($context["headerName"] ?? null), "html", null, true);
+    ";
+        // line 12
+        $this->loadTemplate("header.html", "templateChart1-ru.html", 12)->display($context);
+        // line 13
         echo "
-                            </td>
-                        </tr>
-                    </table>
-                    <table class=\"invisable-table\" style=\"padding-top: 5px;\">
-                        <tr>
-                            <td style=\"width: 14px; padding-right: 7px;\">
-                                <img class=\"calendar-svg\" src=\"";
-        // line 366
-        echo twig_escape_filter($this->env, ($context["domain"] ?? null), "html", null, true);
-        echo "/images/calendar.svg\" alt=\"img\">
-                            </td>
-                            <td align=\"left\" class=\"header__subtitle\" style=\"width: 80px;\">
-                                ";
-        // line 369
-        echo twig_escape_filter($this->env, ($context["headerDate"] ?? null), "html", null, true);
+    ";
+        // line 14
+        $this->loadTemplate("footer.html", "templateChart1-ru.html", 14)->display($context);
+        // line 15
         echo "
-                            </td>
-                            <td style=\"padding-right: 7px;\">
-                                <img class=\"point-svg\" src=\"";
-        // line 372
-        echo twig_escape_filter($this->env, ($context["domain"] ?? null), "html", null, true);
-        echo "/images/point.svg\" alt=\"img\">
-                            </td>
-                            <td align=\"left\" class=\"header__subtitle\">
-                                ";
-        // line 375
-        echo twig_escape_filter($this->env, ($context["headerCity"] ?? null), "html", null, true);
-        echo "
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-
-                            </td>
-                            <td align=\"left\" class=\"header__nexttitle\">
-                                ";
-        // line 383
-        echo twig_escape_filter($this->env, ($context["headerDay"] ?? null), "html", null, true);
-        echo "
-                            </td>
-                            <td>
-
-                            </td>
-                            <td align=\"left\" class=\"header__nexttitle\">
-                                ";
-        // line 389
-        echo twig_escape_filter($this->env, ($context["headerPlace"] ?? null), "html", null, true);
-        echo "
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class=\"header__info-right\">
-                    <table>
-                        <tr>
-                            <td>
-                                <table class=\"invisable-table header__infotable\" cellpadding=\"0\" border=\"0\"
-                                    cellspacing=\"0\">
-                                    <tr height=\"10px;\">
-                                        <td class=\"header__nexttitle\" align=\"right\" style=\"padding-top: 8px;\">
-                                            <a href=\"tel:";
-        // line 402
-        echo twig_escape_filter($this->env, ($context["headerPhone"] ?? null), "html", null, true);
-        echo "\" target=\"_blank\">
-                                                ";
-        // line 403
-        echo twig_escape_filter($this->env, ($context["headerPhone"] ?? null), "html", null, true);
-        echo "
-                                            </a>
-                                        </td>
-                                        <td style=\"padding-top: 8px; width: 24px\" align=\"center\">
-                                            <img class=\"phone-svg\" src=\"";
-        // line 407
-        echo twig_escape_filter($this->env, ($context["domain"] ?? null), "html", null, true);
-        echo "/images/phone.svg\" alt=\"img\">
-                                        </td>
-
-                                    </tr>
-                                    <tr height=\"10px;\">
-                                        <td class=\"header__nexttitle\" align=\"right\">
-                                            <a href=\"mailto:";
-        // line 413
-        echo twig_escape_filter($this->env, ($context["headerEmail"] ?? null), "html", null, true);
-        echo "\" target=\"_blank\">
-                                                ";
-        // line 414
-        echo twig_escape_filter($this->env, ($context["headerEmail"] ?? null), "html", null, true);
-        echo "
-                                            </a>
-                                        </td>
-                                        <td style=\"padding-top: 0px; width: 24px\" align=\"center\">
-                                            <img class=\"email-svg\" src=\"";
-        // line 418
-        echo twig_escape_filter($this->env, ($context["domain"] ?? null), "html", null, true);
-        echo "/images/email.svg\" alt=\"img\">
-                                        </td>
-                                    </tr>
-                                    <tr height=\"10px;\">
-                                        <td class=\"header__nexttitle\" align=\"right\">
-                                            <a href=\"https://";
-        // line 423
-        echo twig_escape_filter($this->env, ($context["headerLink"] ?? null), "html", null, true);
-        echo "/\" target=\"_blank\">";
-        echo twig_escape_filter($this->env, ($context["headerLink"] ?? null), "html", null, true);
-        echo "</a>
-                                        </td>
-                                        <td style=\"padding-top: 0px; width: 24px\" align=\"center\"><img class=\"tg-svg\"
-                                                src=\"";
-        // line 426
-        echo twig_escape_filter($this->env, ($context["domain"] ?? null), "html", null, true);
-        echo "/images/tg.svg\" alt=\"img\"></td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <td style=\"padding-top:5px;\">
-                                <img class=\"logo-svg\" src=\"";
-        // line 431
-        echo twig_escape_filter($this->env, ($context["domain"] ?? null), "html", null, true);
-        echo "/images/logo.svg\" alt=\"img\">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <footer>
-        <div class=\"footer\">
-            <span style=\"padding-right: 4px;\">Артист</span>
-            <span><img class=\"sign-svg\" src=\"";
-        // line 443
-        echo twig_escape_filter($this->env, ($context["domain"] ?? null), "html", null, true);
-        echo "/images/sign.svg\" alt=\"img\"
-                    style=\"padding-right: 15px;\"></span>
-            <span style=\"padding-left: 15px; padding-right: 4px;\">Организатор</span>
-            <span><img class=\"sign-svg\" src=\"";
-        // line 446
-        echo twig_escape_filter($this->env, ($context["domain"] ?? null), "html", null, true);
-        echo "/images/sign.svg\" alt=\"img\"></span>
-        </div>
-    </footer>
-
     <main>
 
         ";
-        // line 452
+        // line 18
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["rows"] ?? null));
         foreach ($context['_seq'] as $context["key"] => $context["page"]) {
-            // line 453
+            // line 19
             echo "        <div ";
             if (($context["key"] != 0)) {
                 echo " style=\"page-break-before: always;\" ";
@@ -570,28 +74,28 @@ class __TwigTemplate_37740fbad35aeadf17f5a25647b636fcec2f773bf75edf13535c027e51e
             <div class=\"main\">
 
                 ";
-            // line 456
+            // line 22
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["page"]);
             foreach ($context['_seq'] as $context["keyName"] => $context["table"]) {
-                // line 457
+                // line 23
                 echo "                <table class=\"dataTable\" cellpadding=\"9\" border=\"0\" cellspacing=\"0\">
                     <thead>
                         ";
-                // line 459
+                // line 25
                 if (($context["keyName"] == "План")) {
-                    // line 460
+                    // line 26
                     echo "                        <tr class=\"headerTitle\">
                             <td colspan=\"5\">
                                 ";
-                    // line 462
+                    // line 28
                     echo twig_escape_filter($this->env, $context["keyName"], "html", null, true);
                     echo "
                             </td>
                         </tr>
                         <tr>
                             <td style=\"padding-left: 30px; width: 80px;\">
-                                Билеты
+                                ы
                             </td>
                             <td style=\"width: 140px;\">
                                 Пригласительные
@@ -608,16 +112,16 @@ class __TwigTemplate_37740fbad35aeadf17f5a25647b636fcec2f773bf75edf13535c027e51e
                         </tr>
                         ";
                 }
-                // line 483
+                // line 49
                 echo "
                         ";
-                // line 484
+                // line 50
                 if (($context["keyName"] == "Ценовые пояса")) {
-                    // line 485
+                    // line 51
                     echo "                        <tr class=\"headerTitle\">
                             <td colspan=\"4\">
                                 ";
-                    // line 487
+                    // line 53
                     echo twig_escape_filter($this->env, $context["keyName"], "html", null, true);
                     echo "
                             </td>
@@ -638,127 +142,127 @@ class __TwigTemplate_37740fbad35aeadf17f5a25647b636fcec2f773bf75edf13535c027e51e
                         </tr>
                         ";
                 }
-                // line 505
+                // line 71
                 echo "
                     </thead>
                     <tbody>
                         ";
-                // line 508
+                // line 74
                 $context['_parent'] = $context;
                 $context['_seq'] = twig_ensure_traversable($context["table"]);
                 foreach ($context['_seq'] as $context["_key"] => $context["row"]) {
-                    // line 509
+                    // line 75
                     echo "                        ";
                     if (($context["keyName"] == "План")) {
-                        // line 510
+                        // line 76
                         echo "                        <tr class=\"tr-simple tr-plan ";
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 510) == "true")) {
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 76) == "true")) {
                             echo " tr-group ";
                         }
-                        // line 511
+                        // line 77
                         echo "                                        ";
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 511) == "true")) {
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 77) == "true")) {
                             echo " tr-group__title ";
                         }
-                        // line 512
+                        // line 78
                         echo "                                        ";
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isSub", [], "any", false, false, false, 512) == "true")) {
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isSub", [], "any", false, false, false, 78) == "true")) {
                             echo " tr-group__sub ";
                         }
-                        // line 513
+                        // line 79
                         echo "                                    \">
                             <td class=\"tr-group__first\">
                                 ";
-                        // line 515
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "tickets", [], "any", false, false, false, 515), "html", null, true);
+                        // line 81
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "tickets", [], "any", false, false, false, 81), "html", null, true);
                         echo "
                             </td>
                             <td>
                                 ";
-                        // line 518
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "invitation", [], "any", false, false, false, 518), "html", null, true);
+                        // line 84
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "invitation", [], "any", false, false, false, 84), "html", null, true);
                         echo "
                             </td>
                             <td>
                                 ";
-                        // line 521
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "shaft", [], "any", false, false, false, 521), "html", null, true);
+                        // line 87
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "shaft", [], "any", false, false, false, 87), "html", null, true);
                         echo "
                             </td>
                             <td>
                                 ";
-                        // line 524
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "sale", [], "any", false, false, false, 524), "html", null, true);
+                        // line 90
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "sale", [], "any", false, false, false, 90), "html", null, true);
                         echo "
                             </td>
                             <td>
                                 ";
-                        // line 527
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "avg", [], "any", false, false, false, 527), "html", null, true);
+                        // line 93
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "avg", [], "any", false, false, false, 93), "html", null, true);
                         echo "
                             </td>
                         </tr>
                         ";
                     }
-                    // line 531
+                    // line 97
                     echo "
                         ";
-                    // line 532
+                    // line 98
                     if (($context["keyName"] == "Ценовые пояса")) {
-                        // line 533
+                        // line 99
                         echo "                        <tr class=\"tr-simple ";
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 533) == "true")) {
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTotal", [], "any", false, false, false, 99) == "true")) {
                             echo " tr-group ";
                         }
-                        // line 534
+                        // line 100
                         echo "                                        ";
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 534) == "true")) {
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isTitle", [], "any", false, false, false, 100) == "true")) {
                             echo " tr-group__title ";
                         }
-                        // line 535
+                        // line 101
                         echo "                                        ";
-                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isSub", [], "any", false, false, false, 535) == "true")) {
+                        if ((twig_get_attribute($this->env, $this->source, $context["row"], "isSub", [], "any", false, false, false, 101) == "true")) {
                             echo " tr-group__sub ";
                         }
-                        // line 536
+                        // line 102
                         echo "                                    \">
                             <td class=\"tr-group__first\">
                                 <div class=\"zone-circle\" style=\"background-color: ";
-                        // line 538
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "zone", [], "any", false, false, false, 538), "html", null, true);
+                        // line 104
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "zone", [], "any", false, false, false, 104), "html", null, true);
                         echo ";\">
 
                                 </div>
                             </td>
                             <td>
                                 ";
-                        // line 543
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "price", [], "any", false, false, false, 543), "html", null, true);
+                        // line 109
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "price", [], "any", false, false, false, 109), "html", null, true);
                         echo "
                             </td>
                             <td>
                                 ";
-                        // line 546
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "amount", [], "any", false, false, false, 546), "html", null, true);
+                        // line 112
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "amount", [], "any", false, false, false, 112), "html", null, true);
                         echo "
                             </td>
                             <td>
                                 ";
-                        // line 549
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "sum", [], "any", false, false, false, 549), "html", null, true);
+                        // line 115
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["row"], "sum", [], "any", false, false, false, 115), "html", null, true);
                         echo "
                             </td>
                         </tr>
                         ";
                     }
-                    // line 553
+                    // line 119
                     echo "
                         ";
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['row'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 555
+                // line 121
                 echo "                    </tbody>
                 </table>
 
@@ -767,7 +271,7 @@ class __TwigTemplate_37740fbad35aeadf17f5a25647b636fcec2f773bf75edf13535c027e51e
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['keyName'], $context['table'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 559
+            // line 125
             echo "            </div>
         </div>
         ";
@@ -775,7 +279,7 @@ class __TwigTemplate_37740fbad35aeadf17f5a25647b636fcec2f773bf75edf13535c027e51e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['key'], $context['page'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 562
+        // line 128
         echo "
     </main>
 
@@ -796,7 +300,7 @@ class __TwigTemplate_37740fbad35aeadf17f5a25647b636fcec2f773bf75edf13535c027e51e
 
     public function getDebugInfo()
     {
-        return array (  779 => 562,  771 => 559,  762 => 555,  755 => 553,  748 => 549,  742 => 546,  736 => 543,  728 => 538,  724 => 536,  719 => 535,  714 => 534,  709 => 533,  707 => 532,  704 => 531,  697 => 527,  691 => 524,  685 => 521,  679 => 518,  673 => 515,  669 => 513,  664 => 512,  659 => 511,  654 => 510,  651 => 509,  647 => 508,  642 => 505,  621 => 487,  617 => 485,  615 => 484,  612 => 483,  588 => 462,  584 => 460,  582 => 459,  578 => 457,  574 => 456,  565 => 453,  561 => 452,  552 => 446,  546 => 443,  531 => 431,  523 => 426,  515 => 423,  507 => 418,  500 => 414,  496 => 413,  487 => 407,  480 => 403,  476 => 402,  460 => 389,  451 => 383,  440 => 375,  434 => 372,  428 => 369,  422 => 366,  412 => 359,  406 => 356,  87 => 40,  78 => 34,  68 => 27,  58 => 20,  37 => 1,);
+        return array (  283 => 128,  275 => 125,  266 => 121,  259 => 119,  252 => 115,  246 => 112,  240 => 109,  232 => 104,  228 => 102,  223 => 101,  218 => 100,  213 => 99,  211 => 98,  208 => 97,  201 => 93,  195 => 90,  189 => 87,  183 => 84,  177 => 81,  173 => 79,  168 => 78,  163 => 77,  158 => 76,  155 => 75,  151 => 74,  146 => 71,  125 => 53,  121 => 51,  119 => 50,  116 => 49,  92 => 28,  88 => 26,  86 => 25,  82 => 23,  78 => 22,  69 => 19,  65 => 18,  60 => 15,  58 => 14,  55 => 13,  53 => 12,  46 => 7,  44 => 6,  37 => 1,);
     }
 
     public function getSourceContext()
