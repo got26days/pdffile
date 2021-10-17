@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {% include 'style.html' %}
+
+</head>
+
+<body>
+
+    {% include 'header-en.html' %}
+
+    {% include 'footer-en.html' %}
+
+    <main>
+
+        {% for key, page in rows1 %}
+        <div {% if key !=0 %} style="page-break-before: always;" {% endif %}>
+            <div class="main">
+
+                {% for keyName, table in page %}
+                <table class="dataTable" cellpadding="9" border="0" cellspacing="0">
+                    <thead>
+                        {% if keyName == 'План' %}
+                        <tr class="headerTitle">
+                            <td colspan="5">
+                                {{ keyName }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 30px; width: 80px;">
+                                ы
+                            </td>
+                            <td style="width: 140px;">
+                                Пригласительные
+                            </td>
+                            <td>
+                                Вал
+                            </td>
+                            <td>
+                                В продажу
+                            </td>
+                            <td>
+                                Средняя цена билета
+                            </td>
+                        </tr>
+                        {% endif %}
+
+                        {% if keyName == 'Ценовые пояса' %}
+                        <tr class="headerTitle">
+                            <td colspan="4">
+                                {{ keyName }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 30px; width: 120px;">
+                                Пояс
+                            </td>
+                            <td style="width: 140px;">
+                                Цена
+                            </td>
+                            <td>
+                                Количество
+                            </td>
+                            <td>
+                                Сумма
+                            </td>
+                        </tr>
+                        {% endif %}
+
+                    </thead>
+                    <tbody>
+                        {% for row in table %}
+                        {% if keyName == 'План'%}
+                        <tr class="tr-simple tr-plan {% if row.isTotal == 'true' %} tr-group {% endif %}
+                                        {% if row.isTitle == 'true' %} tr-group__title {% endif %}
+                                        {% if row.isSub == 'true' %} tr-group__sub {% endif %}
+                                    ">
+                            <td class="tr-group__first">
+                                {{ row.tickets }}
+                            </td>
+                            <td>
+                                {{ row.invitation }}
+                            </td>
+                            <td>
+                                {{ row.shaft }}
+                            </td>
+                            <td>
+                                {{ row.sale }}
+                            </td>
+                            <td>
+                                {{ row.avg }}
+                            </td>
+                        </tr>
+                        {% endif %}
+
+                        {% if keyName == 'Ценовые пояса' %}
+                        <tr class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
+                                        {% if row.isTitle == 'true' %} tr-group__title {% endif %}
+                                        {% if row.isSub == 'true' %} tr-group__sub {% endif %}
+                                    ">
+                            <td class="tr-group__first">
+                                <div class="zone-circle" style="background-color: {{ row.zone }};">
+
+                                </div>
+                            </td>
+                            <td>
+                                {{ row.price }}
+                            </td>
+                            <td>
+                                {{ row.amount }}
+                            </td>
+                            <td>
+                                {{ row.sum }}
+                            </td>
+                        </tr>
+                        {% endif %}
+
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+
+
+        <div style="page-break-before: always;">
+            <div class="main">
+                <div class="dataTable__title">
+                    Сумма продаж
+                </div>
+                <div class="chart-wrapper">
+                    <img class="chart" src="{{ chart1 }}" alt="chart">
+                </div>
+                <div class="dataTable__title">
+                    Количество билетов
+                </div>
+                <div class="chart-wrapper">
+                    <img class="chart" src="{{ chart2 }}" alt="chart">
+                </div>
+
+                <table class="dataTable" cellpadding="9">
+                    <thead>
+                        <tr>
+                            <td style="padding-left: 30px;">
+
+                            </td>
+                            <td>
+                                Билеты
+                            </td>
+                            <td>
+                                % Билетов
+                            </td>
+                            <td>
+                                Сумма
+                            </td>
+                            <td>
+                                % Сумма
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in rows2 %}
+                        <tr
+                            class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
+                                                                                {% if row.isTitle == 'true' %} tr-group__titleOne {% endif %}
+                                                                                {% if row.isSub == 'true' %} tr-group__sub {% endif %}">
+                            <td class="tr-group__first">
+                                {{ row.name|raw }}
+                            </td>
+                            <td>
+                                {{ row.tickets }}
+                            </td>
+                            <td>
+                                {{ row.percent_tickets }}
+                            </td>
+                            <td>
+                                {{ row.sum }}
+                            </td>
+                            <td>
+                                {{ row.percent_sum }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div style="page-break-before: always;">
+            <div class="main">
+                <div class="dataTable__title">
+                    Продажи по оперторам
+                </div>
+                <div class="chart-wrapper">
+                    <img class="chart" src="{{ chart3 }}" alt="chart">
+                </div>
+
+                <table class="dataTable" cellpadding="9">
+                    <thead>
+                        <tr class="headerTitle">
+                            <td colspan="5">
+                                Всего продано
+                            </td>
+                        </tr>
+                        <tr class="dataTable-manyhr">
+                            <td style="padding-left: 30px; width: 190px;">
+                                Оператор
+                            </td>
+                            <td>
+                                Количество проданных
+                            </td>
+                            <td>
+                                Сумма
+                                проданных
+                            </td>
+                            <td>
+                                Количество возвращенных
+                            </td>
+                            <td>
+                                Сумма возвращенных
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in rows3 %}
+                        <tr
+                            class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
+                                                                                                {% if row.isTitle == 'true' %} tr-group__titleOne {% endif %}
+                                                                                                {% if row.isSub == 'true' %} tr-group__sub {% endif %}">
+                            <td class="tr-group__first">
+                                {{ row.operator|raw }}
+                            </td>
+                            <td>
+                                {{ row.number_sold }}
+                            </td>
+                            <td>
+                                {{ row.sum_sold }}
+                            </td>
+                            <td>
+                                {{ row.number_return }}
+                            </td>
+                            <td>
+                                {{ row.sum_return }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div style="page-break-before: always;">
+            <div class="main">
+                <div class="dataTable__title">
+                    Динамика по дням
+                </div>
+                <div class="dataTable__title">
+                    Сумма продаж
+                </div>
+                <div class="chart-wrapper">
+                    <img class="chart" src="{{ chart4 }}" alt="chart">
+                </div>
+                <div class="dataTable__title">
+                    Количество билетов
+                </div>
+                <div class="chart-wrapper">
+                    <img class="chart" src="{{ chart5 }}" alt="chart">
+                </div>
+            </div>
+        </div>
+        {% for key, page in rows4 %}
+        <div style="page-break-before: always;">
+            <div class="main">
+
+                {% for keyName, table in page %}
+                <table class="dataTable" cellpadding="9" border="0" cellspacing="0">
+                    <thead>
+                        <tr class="headerTitle">
+                            <td colspan="6">
+                                {{ keyName }}
+                            </td>
+                        </tr>
+                        <tr class="dataTable-manyhr">
+                            <td style="padding-left: 30px; width: 80px;">
+                                Дата
+                            </td>
+                            <td>
+                                Оператор
+                            </td>
+                            <td>
+                                Количество проданных
+                            </td>
+                            <td>
+                                Сумма
+                                проданных
+                            </td>
+                            <td>
+                                Количество возвращенных
+                            </td>
+                            <td>
+                                Сумма возвращенных
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in table %}
+                        <tr class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
+                                                                {% if row.isTitle == 'true' %} tr-group__title {% endif %}
+                                                                {% if row.isSub == 'true' %} tr-group__sub {% endif %}
+                                                            ">
+                            <td class="tr-group__first">
+                                {{ row.date|raw }}
+                            </td>
+                            <td style="position: relative;">
+                                <div class="sub-before sub-chart">
+                                    <img src="{{ domain }}/images/arrow.svg" alt="arrow">
+                                </div>
+                                {{ row.operator|raw }}
+                            </td>
+                            <td>
+                                {{ row.number_sold }}
+                            </td>
+                            <td>
+                                {{ row.sum_sold }}
+                            </td>
+                            <td>
+                                {{ row.number_return }}
+                            </td>
+                            <td>
+                                {{ row.sum_return }}
+                            </td>
+                        </tr>
+
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </main>
+
+</body>
+
+</html>
