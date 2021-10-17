@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* template0-ru.html */
-class __TwigTemplate_c4e4b116f78e5fbe9d918de1ecce15bfe0d4077b35cfeaa2d598199af52b33ce extends Template
+/* template0-en.html */
+class __TwigTemplate_ea56058507536ef76834994d6e0439b3e7219a6092920e900e108e3588fe2b6e extends Template
 {
     private $source;
     private $macros = [];
@@ -41,7 +41,7 @@ class __TwigTemplate_c4e4b116f78e5fbe9d918de1ecce15bfe0d4077b35cfeaa2d598199af52
     <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
     ";
         // line 6
-        $this->loadTemplate("style.html", "template0-ru.html", 6)->display($context);
+        $this->loadTemplate("style.html", "template0-en.html", 6)->display($context);
         // line 7
         echo "
 </head>
@@ -50,12 +50,12 @@ class __TwigTemplate_c4e4b116f78e5fbe9d918de1ecce15bfe0d4077b35cfeaa2d598199af52
 
     ";
         // line 12
-        $this->loadTemplate("header.html", "template0-ru.html", 12)->display($context);
+        $this->loadTemplate("header-en.html", "template0-en.html", 12)->display($context);
         // line 13
         echo "
     ";
         // line 14
-        $this->loadTemplate("footer.html", "template0-ru.html", 14)->display($context);
+        $this->loadTemplate("footer-en.html", "template0-en.html", 14)->display($context);
         // line 15
         echo "
     <main>
@@ -76,7 +76,7 @@ class __TwigTemplate_c4e4b116f78e5fbe9d918de1ecce15bfe0d4077b35cfeaa2d598199af52
             if (($context["key"] == 0)) {
                 // line 21
                 echo "                <div class=\"title-zone tz-p1\">
-                    <span>Финансовый результат</span>
+                    <span>Financial results</span>
                 </div>
                 ";
             }
@@ -561,7 +561,7 @@ class __TwigTemplate_c4e4b116f78e5fbe9d918de1ecce15bfe0d4077b35cfeaa2d598199af52
 
     public function getTemplateName()
     {
-        return "template0-ru.html";
+        return "template0-en.html";
     }
 
     public function isTraitable()
@@ -576,6 +576,6 @@ class __TwigTemplate_c4e4b116f78e5fbe9d918de1ecce15bfe0d4077b35cfeaa2d598199af52
 
     public function getSourceContext()
     {
-        return new Source("", "template0-ru.html", "C:\\Users\\notepc\\Sites\\test\\123\\pdfCode\\templates\\template0-ru.html");
+        return new Source("", "template0-en.html", "C:\\Users\\notepc\\Sites\\test\\123\\pdfCode\\templates\\template0-en.html");
     }
 }
