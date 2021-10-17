@@ -42,7 +42,7 @@ class PdfCreator
 		$loader = new FilesystemLoader($fullFolder . '/pdfCode/templates');
 		$twig = new Environment($loader, [
 			'cache' => $fullFolder . '/pdfCode/compilation_cache',
-			'auto_reload' => true,
+			'auto_reload' => false,
 		]);
 
 		$temlateName = 'template';
