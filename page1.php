@@ -27,7 +27,7 @@ $page4 = $page4->createHard();
 // exit(0);
 
 $data = [
-	'domain' => 'http://test.test/123/pdfCode/',
+	'domain' => 'http://palagov.beget.tech/123/pdfCode/',
 	'headerName' => 'Евгений Маргулис',
 	'headerDate' => date("m.d.Y"),
 	'headerCity' => 'Красноярск',
@@ -40,11 +40,11 @@ $data = [
 	'rows2' => $page2,
 	'rows3' => $page3,
 	'rows4' => $page4,
-	'chart1' => 'http://test.test/1.png',
-	'chart2' => 'http://test.test/1.png',
-	'chart3' => 'http://test.test/1.png',
-	'chart4' => 'http://test.test/1.png',
-	'chart5' => 'http://test.test/1.png',
+	'chart1' => 'http://palagov.beget.tech/1.png',
+	'chart2' => 'http://palagov.beget.tech/1.png',
+	'chart3' => 'http://palagov.beget.tech/1.png',
+	'chart4' => 'http://palagov.beget.tech/1.png',
+	'chart5' => 'http://palagov.beget.tech/1.png',
 ];
 
 // номер документа, данные, тип документа (1 - без графиков, 2 - с графиками), язык (ru или en), директория, где лежит папка /pdfCode/

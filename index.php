@@ -21,7 +21,7 @@ $page2 = $page2->createHard();
 // exit(0);
 
 $data = [
-	'domain' => 'http://test.test/123/pdfCode/',
+	'domain' => 'http://palagov.beget.tech/123/pdfCode/',
 	'headerName' => 'Евгений Маргулис',
 	'headerDate' => date("m.d.Y"),
 	'headerCity' => 'Красноярск',
