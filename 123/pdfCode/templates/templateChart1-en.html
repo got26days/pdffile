@@ -2,50 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    {% include 'style.html' %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
-
-    {% include 'header-en.html' %}
-
-    {% include 'footer-en.html' %}
-
-    <main>
-
-
-
-
-
-        <div style="page-break-before: always;">
-            <div class="main">
-                <div class="dataTable__title">
-                    Динамика по дням
-                </div>
-                <div class="dataTable__title">
-                    Сумма продаж
-                </div>
-                <div class="chart-wrapper">
-                    <img class="chart" src="{{ chart4 }}" alt="chart">
-                </div>
-                <div class="dataTable__title">
-                    Количество билетов
-                </div>
-                <div class="chart-wrapper">
-                    <img class="chart" src="{{ chart5 }}" alt="chart">
-                </div>
-            </div>
-        </div>
-
-
-        {% for page in rows4 %}
-        <div></div>
-        {% endfor %}
-
-
-    </main>
-
+    {% for page in rows4 %}
+    <div>324</div>
+    {% endfor %}
 </body>
 
 </html>
