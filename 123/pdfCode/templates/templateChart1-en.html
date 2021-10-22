@@ -11,6 +11,9 @@
 
     <header>
         <div class="header">
+            <div class="header__title">
+                Отчет по продажам
+            </div>
             <div class="header__info">
                 <div class="header__info-left">
                     <table class="invisable-table">
@@ -20,6 +23,36 @@
                             </td>
                             <td align="left" class="header__person">
                                 {{ headerName }}
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="invisable-table" style="padding-top: 5px;">
+                        <tr>
+                            <td style="width: 14px; padding-right: 7px;">
+                                <img class="calendar-svg" src="{{ domain }}/images/calendar.svg" alt="img">
+                            </td>
+                            <td align="left" class="header__subtitle" style="width: 80px;">
+                                {{ headerDate }}
+                            </td>
+                            <td style="padding-right: 7px;">
+                                <img class="point-svg" src="{{ domain }}/images/point.svg" alt="img">
+                            </td>
+                            <td align="left" class="header__subtitle">
+                                {{ headerCity }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td align="left" class="header__nexttitle">
+                                {{ headerDay }}
+                            </td>
+                            <td>
+
+                            </td>
+                            <td align="left" class="header__nexttitle">
+                                {{ headerPlace }}
                             </td>
                         </tr>
                     </table>
