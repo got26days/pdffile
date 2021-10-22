@@ -16,7 +16,8 @@
         <div class="main">
 
             {% for keyName, table in page %}
-            <table class="dataTable">
+            <table class="dataTable" cellpadding="9" border="0" cellspacing="0">
+
                 <tbody>
                     {% for row in table %}
                     <tr class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
