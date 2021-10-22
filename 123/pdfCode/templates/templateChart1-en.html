@@ -4,7 +4,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     {% include 'style.html' %}
-
 </head>
 
 <body>
@@ -16,24 +15,47 @@
     <main>
 
 
+
+
+
         <div style="page-break-before: always;">
             <div class="main">
                 <div class="dataTable__title">
-                    Продажи по оперторам
+                    Динамика по дням
+                </div>
+                <div class="dataTable__title">
+                    Сумма продаж
                 </div>
                 <div class="chart-wrapper">
-                    <img class="chart" src="{{ chart3 }}" alt="chart">
+                    <img class="chart" src="{{ chart4 }}" alt="chart">
                 </div>
+                <div class="dataTable__title">
+                    Количество билетов
+                </div>
+                <div class="chart-wrapper">
+                    <img class="chart" src="{{ chart5 }}" alt="chart">
+                </div>
+            </div>
+        </div>
 
-                <table class="dataTable" cellpadding="9">
+
+        {% for key, page in rows4 %}
+        <div style="page-break-before: always;">
+            <div class="main">
+
+                {% for keyName, table in page %}
+                <table class="dataTable" cellpadding="9" border="0" cellspacing="0">
                     <thead>
                         <tr class="headerTitle">
-                            <td colspan="5">
-                                Всего продано
+                            <td colspan="6">
+                                {{ keyName }}
                             </td>
                         </tr>
                         <tr class="dataTable-manyhr">
-                            <td style="padding-left: 30px; width: 190px;">
+                            <td style="padding-left: 30px; width: 80px;">
+                                Дата
+                            </td>
+                            <td>
                                 Оператор
                             </td>
                             <td>
@@ -52,13 +74,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for row in rows3 %}
-                        <tr
-                            class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
-                                                                                                {% if row.isTitle == 'true' %} tr-group__titleOne {% endif %}
-                                                                                                {% if row.isSub == 'true' %} tr-group__sub {% endif %}">
+                        {% for row in table %}
+                        <tr class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
+                                                                {% if row.isTitle == 'true' %} tr-group__title {% endif %}
+                                                                {% if row.isSub == 'true' %} tr-group__sub {% endif %}
+                                                            ">
                             <td class="tr-group__first">
-                                {{ row.operator }}
+                                {{ row.date|raw }}
+                            </td>
+                            <td style="position: relative;">
+                                <div class="sub-before sub-chart">
+                                    <img src="{{ domain }}/images/arrow.svg" alt="arrow">
+                                </div>
+                                {{ row.operator|raw }}
                             </td>
                             <td>
                                 {{ row.number_sold }}
@@ -73,12 +101,15 @@
                                 {{ row.sum_return }}
                             </td>
                         </tr>
+
                         {% endfor %}
                     </tbody>
                 </table>
+
+                {% endfor %}
             </div>
         </div>
-
+        {% endfor %}
 
 
     </main>
