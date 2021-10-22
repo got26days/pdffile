@@ -17,7 +17,30 @@
 
             {% for keyName, table in page %}
             <table class="dataTable" cellpadding="9" border="0" cellspacing="0">
+                <thead>
 
+                    <tr class="dataTable-manyhr">
+                        <td style="padding-left: 30px; width: 80px;">
+                            Дата
+                        </td>
+                        <td>
+                            Оператор
+                        </td>
+                        <td>
+                            Количество проданных
+                        </td>
+                        <td>
+                            Сумма
+                            проданных
+                        </td>
+                        <td>
+                            Количество возвращенных
+                        </td>
+                        <td>
+                            Сумма возвращенных
+                        </td>
+                    </tr>
+                </thead>
                 <tbody>
                     {% for row in table %}
                     <tr class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
