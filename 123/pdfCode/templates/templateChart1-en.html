@@ -22,51 +22,7 @@
                 {% for keyName, table in page %}
                 <table class="dataTable" cellpadding="9" border="0" cellspacing="0">
                     <thead>
-                        {% if keyName == 'План' %}
-                        <tr class="headerTitle">
-                            <td colspan="5">
-                                {{ keyName }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding-left: 30px; width: 80px;">
 
-                            </td>
-                            <td style="width: 140px;">
-                                Пригласительные
-                            </td>
-                            <td>
-                                Вал
-                            </td>
-                            <td>
-                                В продажу
-                            </td>
-                            <td>
-                                Средняя цена билета
-                            </td>
-                        </tr>
-                        {% endif %}
-                        {% if keyName == 'Ценовые пояса' %}
-                        <tr class="headerTitle">
-                            <td colspan="4">
-                                {{ keyName }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding-left: 30px; width: 120px;">
-                                Пояс
-                            </td>
-                            <td style="width: 140px;">
-                                Цена
-                            </td>
-                            <td>
-                                Количество
-                            </td>
-                            <td>
-                                Сумма
-                            </td>
-                        </tr>
-                        {% endif %}
                     </thead>
                     <tbody>
                         {% for row in table %}
