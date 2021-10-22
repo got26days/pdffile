@@ -17,8 +17,39 @@
 
             {% for keyName, table in page %}
             <table class="dataTable">
+                <tbody>
+                    {% for row in table %}
+                    <tr class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
+                                                                        {% if row.isTitle == 'true' %} tr-group__title {% endif %}
+                                                                        {% if row.isSub == 'true' %} tr-group__sub {% endif %}
+                                                                    ">
+                        <td class="tr-group__first">
+                            {{ row.date|raw }}
+                        </td>
+                        <td style="position: relative;">
+                            <div class="sub-before sub-chart">
+                                <img src="{{ domain }}/images/arrow.svg" alt="arrow">
+                            </div>
+                            {{ row.operator|raw }}
+                        </td>
+                        <td>
+                            {{ row.number_sold }}
+                        </td>
+                        <td>
+                            {{ row.sum_sold }}
+                        </td>
+                        <td>
+                            {{ row.number_return }}
+                        </td>
+                        <td>
+                            {{ row.sum_return }}
+                        </td>
+                    </tr>
 
+                    {% endfor %}
+                </tbody>
             </table>
+
             {% endfor %}
         </div>
     </div>
