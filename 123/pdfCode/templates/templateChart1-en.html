@@ -39,6 +39,45 @@
         </div>
 
 
+        {% for key, page in rows4 %}
+        <div style="page-break-before: always;">
+            <div class="main">
+
+                {% for keyName, table in page %}
+                <table class="dataTable" cellpadding="9" cellspacing="0">
+                    <thead>
+
+                        <tr class="dataTable-manyhr">
+                            <th style="padding-left: 30px; width: 80px;">
+                                Дата
+                            </th>
+                            <th>
+                                Оператор
+                            </th>
+                            <th>
+                                Количество проданных
+                            </th>
+                            <th>
+                                Сумма
+                                проданных
+                            </th>
+                            <th>
+                                Количество возвращенных
+                            </th>
+                            <th>
+                                Сумма возвращенных
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
 
 
     </main>
