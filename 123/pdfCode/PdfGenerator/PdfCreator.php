@@ -33,7 +33,7 @@ class PdfCreator
 
 		$fullFolder = $_SERVER['DOCUMENT_ROOT'] . $this->folder;
 
-		require_once $fullFolder . '/vendor/autoload.php';
+		require_once $fullFolder . 'pdfCode/vendor/autoload.php';
 
 		$options = new Options();
 		$options->set('isRemoteEnabled', TRUE);
