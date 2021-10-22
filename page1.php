@@ -1,8 +1,5 @@
 <?php
 
-echo '4343';
-exit(0);
-
 require_once('./123/pdfCode/PdfGenerator/PdfCreator.php');
 require_once('./123/pdfCode/PdfGenerator/pageCreator.php');
 
