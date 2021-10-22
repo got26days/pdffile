@@ -35,7 +35,7 @@ class PdfCreator
 
 		$options = new Options();
 		$options->set('isRemoteEnabled', TRUE);
-		$options->set('tempDir', $fullFolder . '/pdfCode/tempDir');
+		// $options->set('tempDir', $fullFolder . '/pdfCode/tempDir');
 
 		$dompdf = new Dompdf($options);
 
