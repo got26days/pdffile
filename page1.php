@@ -48,6 +48,6 @@ $data = [
 ];
 
 // номер документа, данные, тип документа (1 - без графиков, 2 - с графиками), язык (ru или en), директория, где лежит папка /pdfCode/
-$pdf = new PdfCreator(1, $data, 2, 'ru', '/123/');
+$pdf = new PdfCreator(1, $data, 2, 'en', '/123/');
 
 return $pdf->create();
