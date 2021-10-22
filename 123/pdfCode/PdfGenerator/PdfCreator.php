@@ -54,8 +54,8 @@ class PdfCreator
 
 		$html = $twig->render($temlateName, $this->data);
 
-		echo $html;
-		exit(0);
+		// echo $html;
+		// exit(0);
 
 
 		$dompdf->loadHtml($html);
