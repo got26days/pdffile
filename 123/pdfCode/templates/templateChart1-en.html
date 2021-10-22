@@ -346,73 +346,7 @@
 <body>
 
 
-
-    <main>
-
-
-
-
-        <div style="page-break-before: always;">
-            <div class="main">
-                <div class="dataTable__title">
-                    Сумма продаж
-                </div>
-
-
-                <table class="dataTable" cellpadding="9">
-                    <thead>
-                        <tr>
-                            <td style="padding-left: 30px;">
-
-                            </td>
-                            <td>
-                                Билеты
-                            </td>
-                            <td>
-                                % Билетов
-                            </td>
-                            <td>
-                                Сумма
-                            </td>
-                            <td>
-                                % Сумма
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for row in rows2 %}
-                        <tr
-                            class="tr-simple {% if row.isTotal == 'true' %} tr-group {% endif %}
-                                                                                {% if row.isTitle == 'true' %} tr-group__titleOne {% endif %}
-                                                                                {% if row.isSub == 'true' %} tr-group__sub {% endif %}">
-                            <td class="tr-group__first">
-                                {{ row.name|raw }}
-                            </td>
-                            <td>
-                                {{ row.tickets }}
-                            </td>
-                            <td>
-                                {{ row.percent_tickets }}
-                            </td>
-                            <td>
-                                {{ row.sum }}
-                            </td>
-                            <td>
-                                {{ row.percent_sum }}
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-
-
-
-
-
-    </main>
+    <h1>324</h1>
 
 </body>
 
