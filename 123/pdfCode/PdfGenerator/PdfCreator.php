@@ -2,7 +2,7 @@
 
 namespace PdfGenerator;
 
-require_once __DIR__ . '../../vendor/autoload.php';
+// require_once __DIR__ . '../../vendor/autoload.php';
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
@@ -32,6 +32,8 @@ class PdfCreator
 	{
 
 		$fullFolder = $_SERVER['DOCUMENT_ROOT'] . $this->folder;
+
+		require_once $fullFolder . '/vendor/autoload.php';
 
 		$options = new Options();
 		$options->set('isRemoteEnabled', TRUE);
