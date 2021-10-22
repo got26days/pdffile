@@ -9,7 +9,99 @@
 </head>
 
 <body>
-    <img class="flash-svg" src="{{ domain }}/images/flash.svg" alt="img">
+    <header>
+        <div class="header">
+            <div class="header__title">
+                Отчет по продажам
+            </div>
+            <div class="header__info">
+                <div class="header__info-left">
+                    <table class="invisable-table">
+                        <tr>
+                            <td style="width: 14px; padding-right: 7px;">
+                                <img class="flash-svg" src="{{ domain }}/images/flash.svg" alt="img">
+                            </td>
+                            <td align="left" class="header__person">
+                                {{ headerName }}
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="invisable-table" style="padding-top: 5px;">
+                        <tr>
+                            <td style="width: 14px; padding-right: 7px;">
+                                <img class="calendar-svg" src="{{ domain }}/images/calendar.svg" alt="img">
+                            </td>
+                            <td align="left" class="header__subtitle" style="width: 80px;">
+                                {{ headerDate }}
+                            </td>
+                            <td style="padding-right: 7px;">
+                                <img class="point-svg" src="{{ domain }}/images/point.svg" alt="img">
+                            </td>
+                            <td align="left" class="header__subtitle">
+                                {{ headerCity }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td align="left" class="header__nexttitle">
+                                {{ headerDay }}
+                            </td>
+                            <td>
+
+                            </td>
+                            <td align="left" class="header__nexttitle">
+                                {{ headerPlace }}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="header__info-right">
+                    <table>
+                        <tr>
+                            <td>
+                                <table class="invisable-table header__infotable" cellpadding="0" border="0"
+                                    cellspacing="0">
+                                    <tr height="10px;">
+                                        <td class="header__nexttitle" align="right" style="padding-top: 8px;">
+                                            <a href="tel:{{ headerPhone }}" target="_blank">
+                                                {{ headerPhone }}
+                                            </a>
+                                        </td>
+                                        <td style="padding-top: 8px; width: 24px" align="center">
+                                            <img class="phone-svg" src="{{ domain }}/images/phone.svg" alt="img">
+                                        </td>
+
+                                    </tr>
+                                    <tr height="10px;">
+                                        <td class="header__nexttitle" align="right">
+                                            <a href="mailto:{{ headerEmail }}" target="_blank">
+                                                {{ headerEmail }}
+                                            </a>
+                                        </td>
+                                        <td style="padding-top: 0px; width: 24px" align="center">
+                                            <img class="email-svg" src="{{ domain }}/images/email.svg" alt="img">
+                                        </td>
+                                    </tr>
+                                    <tr height="10px;">
+                                        <td class="header__nexttitle" align="right">
+                                            <a href="https://{{ headerLink }}/" target="_blank">{{ headerLink }}</a>
+                                        </td>
+                                        <td style="padding-top: 0px; width: 24px" align="center"><img class="tg-svg"
+                                                src="{{ domain }}/images/tg.svg" alt="img"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td style="padding-top:5px;">
+                                <img class="logo-svg" src="{{ domain }}/images/logo.svg" alt="img">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </header>
 </body>
 
 </html>
