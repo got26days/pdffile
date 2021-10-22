@@ -20,9 +20,12 @@
             <div class="main">
 
                 {% for keyName, table in page %}
+
+
+
                 <table class="dataTable" cellpadding="9" border="0" cellspacing="0">
                     <thead>
-                        {% if keyName == 'План' %}
+                        {% if keyName %}
                         <tr class="headerTitle">
                             <td colspan="5">
                                 {{ keyName }}
