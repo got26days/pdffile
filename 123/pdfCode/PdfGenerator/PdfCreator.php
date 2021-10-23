@@ -31,11 +31,11 @@ class PdfCreator
 	public function create()
 	{
 
-		$fullFolder = $_SERVER['DOCUMENT_ROOT'] . $this->folder;
+		$fullFolder = $this->folder;
 
 		$options = new Options();
 		$options->set('isRemoteEnabled', TRUE);
-		$options->set('chroot', '/home/bitrix/ext_www/dashboard.ks05.ru/local/php_interface/lib/pdf_file/pdffile-main/123/pdfCode');
+		$options->set('chroot', $fullFolder);
 		$options->set('tempDir', $fullFolder . '/pdfCode/tempDir');
 
 		$dompdf = new Dompdf($options);

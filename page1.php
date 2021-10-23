@@ -1,7 +1,11 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 require_once('./123/pdfCode/PdfGenerator/PdfCreator.php');
 require_once('./123/pdfCode/PdfGenerator/pageCreator.php');
+
 
 use PdfGenerator\pageCreator;
 use PdfGenerator\PdfCreator;
@@ -23,11 +27,11 @@ $page4 = $page4->createHard();
 
 // Для проверки пагинации страниц 
 // header('Content-Type: application/json; charset=utf-8');
-// echo json_encode($page);
+// echo json_encode($page1);
 // exit(0);
 
 $data = [
-	'domain' => 'http://palagov.beget.tech/123/pdfCode/',
+	'domain' => 'https://dashboard.ks05.ru/report/sale/pdf/123/pdfCode/',
 	'headerName' => 'Евгений Маргулис',
 	'headerDate' => date("m.d.Y"),
 	'headerCity' => 'Красноярск',
@@ -48,6 +52,6 @@ $data = [
 ];
 
 // номер документа, данные, тип документа (1 - без графиков, 2 - с графиками), язык (ru или en), директория, где лежит папка /pdfCode/
-$pdf = new PdfCreator(1, $data, 2, 'en', '/123/');
+$pdf = new PdfCreator(1, $data, 2, 'en', '/home/bitrix/ext_www/bm/report/sale/pdf/123');
 
 return $pdf->create();
